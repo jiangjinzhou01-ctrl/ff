@@ -1,0 +1,13 @@
+{
+  "name": "2603班主任工作台",
+  "short_name": "2603工作台",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fbf7ef",
+  "theme_color": "#fff8ef",
+  "description": "2603班高中班主任工作台",
+  "icons": [
+    {"src":"./assets/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
