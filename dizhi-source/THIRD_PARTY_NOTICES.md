@@ -33,3 +33,22 @@ Copyright remains with the original owners. Phosphor's MIT license does not appl
 ## Mineral image
 
 AI-generated editorial visual for science education. Not a photograph of a school collection.
+
+## GSAP and ScrollTrigger
+
+Copyright 2026 GreenSock. Used under the GSAP Standard License:
+https://gsap.com/standard-license
+
+Local bundled files preserve the original copyright and license notices.
+
+## Noto Sans CJK subsets
+
+Noto Sans CJK is licensed under the SIL Open Font License 1.1. Self-hosted subsets have been renamed Dizhi Sans. The original copyright and license are preserved in public/assets/FONT-LICENSE.txt.
+
+## Additional documentary photography
+
+Schoolyard, basketball and team images: https://edu.rednet.cn/content/646849/67/13931982.html
+Sports day: https://www.hunantoday.cn/news/xhn/202509/30579647.html
+Anniversary: https://m.voc.com.cn/xhn/news/202512/31069554.html
+
+Photography remains the property of its original rights holders. Watermarks are preserved.

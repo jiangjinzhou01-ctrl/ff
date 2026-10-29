@@ -8,5 +8,8 @@
     "check": "node scripts/check.mjs",
     "dev": "python3 -m http.server 4173 --directory dist",
     "publish:pages": "node scripts/publish-pages.mjs"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0"
   }
 }

@@ -19,5 +19,10 @@ for(const file of files){
  const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
  if(new Set(ids).size!==ids.length)errors.push(`${file}: duplicate id`);
 }
+const css=fs.readFileSync(path.join(dir,'style.css'),'utf8');
+for(const match of css.matchAll(/url\(['"]?([^'"\)]+)['"]?\)/g)){
+ const file=path.resolve(dir,match[1]);
+ if(!fs.existsSync(file)||fs.statSync(file).size===0)errors.push(`style.css: missing or empty ${match[1]}`);
+}
 if(errors.length){console.error(errors.join('\n'));process.exit(1)}
 console.log(`Verified ${files.length} pages: local links, images, section anchors and landmarks.`);
