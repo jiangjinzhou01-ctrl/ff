@@ -2,7 +2,7 @@
    DESIGN_VARIANCE: 6; MOTION_INTENSITY: 6; VISUAL_DENSITY: 4.
    One motion curve, three explicit parameters shared with motion.js.
    All media and copy enter as a group. Square media; 4px controls. */
-@font-face{font-family:Dizhi Sans;src:url('assets/dizhi-bold.woff2') format('woff2');font-weight:600 900;font-display:swap}
+@font-face{font-family:Dizhi Sans;src:url('assets/dizhi-bold.woff2?v=20261029-3') format('woff2');font-weight:600 900;font-display:swap}
 :root{--paper:#fcfdfd;--surface:#fff;--ink:#193543;--muted:#5b707a;--blue:#1c526e;--line:#dce5e8;--tint:#f0f5f6;--blue-soft:#eaf2f5;--font:'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',system-ui,sans-serif;--motion-duration:900ms;--motion-fast:300ms;--motion-ease:cubic-bezier(.22,1,.36,1);color-scheme:light;scroll-padding-top:100px;scrollbar-gutter:stable}
 @media(prefers-color-scheme:dark){:root:not([data-theme=light]){--paper:#122630;--surface:#18333f;--ink:#e4edef;--muted:#abc0c9;--blue:#a2d4eb;--line:#35525f;--tint:#1a3541;--blue-soft:#203e4c;color-scheme:dark}}
 :root[data-theme=dark]{--paper:#122630;--surface:#18333f;--ink:#e4edef;--muted:#abc0c9;--blue:#a2d4eb;--line:#35525f;--tint:#1a3541;--blue-soft:#203e4c;color-scheme:dark}

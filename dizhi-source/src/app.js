@@ -58,7 +58,7 @@ function searchSite(){
  if(!q){result.innerHTML='<p class="search-hint">试试“招生”“篮球”或“校园”</p>';return;}
  const hits=searchData.filter(item=>(item.title+' '+item.text).toLowerCase().includes(q));
  if(!hits.length)result.innerHTML='<div class="empty-state"><strong>暂未找到相关内容</strong><p>换一个关键词，或者从导航继续了解学校。</p></div>';
- hits.forEach(item=>{const link=document.createElement('a'),label=document.createElement('span');link.href=item.url;label.textContent=item.title;link.append(label,svgIcon('arrow-right'));result.append(link);});M.enter(result);
+ hits.forEach(item=>{const link=document.createElement('a'),label=document.createElement('span');link.href=item.url+'?v=20261029-3';label.textContent=item.title;link.append(label,svgIcon('arrow-right'));result.append(link);});M.enter(result);
 }
 $('#site-search')?.addEventListener('input',searchSite);$('#site-search')?.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();$('#search-results a')?.focus();}});
 

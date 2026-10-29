@@ -10,7 +10,7 @@ for(const file of files){
   if(/^(?:https?:|data:|mailto:|tel:)/.test(target))continue;
   if(!fs.existsSync(path.resolve(dir,target)))errors.push(`${file}: missing ${target}`);
  }
- for(const match of html.matchAll(/href="([a-z-]+\.html)?#([^"?]+)"/g)){
+ for(const match of html.matchAll(/href="([a-z-]+\.html)?(?:\?[^"#]*)?#([^"?]+)"/g)){
   const targetHtml=match[1]?fs.readFileSync(path.join(dir,match[1]),'utf8'):html;
   if(!targetHtml.includes(`id="${match[2]}"`))errors.push(`${file}: missing anchor ${match[0]}`);
  }
@@ -23,7 +23,7 @@ for(const file of files){
 }
 const css=fs.readFileSync(path.join(dir,'style.css'),'utf8');
 for(const match of css.matchAll(/url\(['"]?([^'"\)]+)['"]?\)/g)){
- const file=path.resolve(dir,match[1]);
+ const file=path.resolve(dir,match[1].split('?')[0].split('#')[0]);
  if(!fs.existsSync(file)||fs.statSync(file).size===0)errors.push(`style.css: missing or empty ${match[1]}`);
 }
 if(errors.length){console.error(errors.join('\n'));process.exit(1)}

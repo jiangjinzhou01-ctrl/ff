@@ -43,4 +43,10 @@ const iconNames=fs.readdirSync(path.join(root,'src/icons')).filter(f=>f.endsWith
 const symbols=iconNames.map(file=>{const raw=fs.readFileSync(path.join(root,'src/icons',file),'utf8');const body=raw.replace(/^[\s\S]*?<svg[^>]*>/,'').replace(/<\/svg>[\s\S]*$/,'');return `<symbol id="${file.slice(0,-4)}" viewBox="0 0 256 256">${body}</symbol>`;});
 fs.writeFileSync(path.join(out,'assets/icons.svg'),`<svg xmlns="http://www.w3.org/2000/svg">${symbols.join('')}</svg>`);
 fs.copyFileSync(path.join(root,'src/icons/mountains.svg'),path.join(out,'assets/favicon.svg'));
+// Carry the same revision through every local page so fast releases stay consistent.
+for(const file of fs.readdirSync(out).filter(name=>name.endsWith('.html'))){
+ const target=path.join(out,file);
+ const html=fs.readFileSync(target,'utf8').replace(/href="([a-z0-9-]+\.html)(#[^"]*)?"/g,(_,route,hash='')=>`href="${route}?v=20261029-3${hash}"`);
+ fs.writeFileSync(target,html);
+}
 console.log('Built 10 pages with the shared motion system in '+path.relative(root,out));
