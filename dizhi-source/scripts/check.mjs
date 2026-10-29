@@ -16,6 +16,8 @@ for(const file of files){
  }
  if(!html.includes('<main id="main">')||!html.includes('lang="zh-CN"'))errors.push(`${file}: missing accessibility landmarks`);
  if(html.includes('—'))errors.push(`${file}: prohibited em dash`);
+ if(/[↗▷Ⅱ→←]/u.test(html))errors.push(`${file}: text character used as a control icon`);
+ if(html.includes('brand-mark'))errors.push(`${file}: obsolete single-character logo`);
  const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
  if(new Set(ids).size!==ids.length)errors.push(`${file}: duplicate id`);
 }

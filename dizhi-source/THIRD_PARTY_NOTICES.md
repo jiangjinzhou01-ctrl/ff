@@ -34,7 +34,7 @@ Copyright remains with the original owners. Phosphor's MIT license does not appl
 
 AI-generated editorial visual for science education. Not a photograph of a school collection.
 
-## GSAP and ScrollTrigger
+## GSAP and CustomEase
 
 Copyright 2026 GreenSock. Used under the GSAP Standard License:
 https://gsap.com/standard-license
