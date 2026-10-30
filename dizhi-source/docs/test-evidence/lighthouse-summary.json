@@ -1,50 +1,15 @@
-[
-  {
-    "page": "首页",
-    "url": "http://localhost:4321/ff/dizhi/",
-    "time": "2026-10-29T11:22:19.500Z",
-    "lighthouse": "13.6.0",
-    "scores": {
-      "performance": 92,
-      "accessibility": 100,
-      "best-practices": 100,
-      "seo": 100
-    },
-    "metrics": {
-      "largest-contentful-paint": "3.4 s",
-      "total-blocking-time": "0 ms",
-      "cumulative-layout-shift": "0"
-    },
-    "screenEmulation": {
-      "mobile": true,
-      "width": 412,
-      "height": 823,
-      "deviceScaleFactor": 1.75,
-      "disabled": false
-    }
+{
+  "scores": {
+    "performance": 91,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100
   },
-  {
-    "page": "招生信息",
-    "url": "http://localhost:4321/ff/dizhi/admissions.html",
-    "time": "2026-10-30T07:13:24.029Z",
-    "lighthouse": "13.6.0",
-    "scores": {
-      "performance": 100,
-      "accessibility": 100,
-      "best-practices": 100,
-      "seo": 100
-    },
-    "metrics": {
-      "largest-contentful-paint": "0.8 s",
-      "total-blocking-time": "20 ms",
-      "cumulative-layout-shift": "0"
-    },
-    "screenEmulation": {
-      "mobile": true,
-      "width": 412,
-      "height": 823,
-      "deviceScaleFactor": 1.75,
-      "disabled": false
-    }
-  }
-]
+  "metrics": {
+    "largest-contentful-paint": "3.5\u00a0s",
+    "total-blocking-time": "100\u00a0ms",
+    "cumulative-layout-shift": "0"
+  },
+  "time": "2026-10-30T09:12:29.640Z",
+  "version": "13.6.0"
+}

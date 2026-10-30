@@ -39,6 +39,17 @@ jobs:
         working-directory: dizhi-source
       - uses: actions/configure-pages@v5
         if: github.event_name != 'pull_request'
+      - name: Prefer Actions publishing over the old Jekyll source
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          publish_source=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq .build_type)
+          if [ "$publish_source" != "workflow" ]; then
+            if ! gh api --method PUT "repos/$GITHUB_REPOSITORY/pages" -f build_type=workflow > /dev/null; then
+              echo "::warning::Pages source could not be changed. The artifact deployment will still run."
+            fi
+          fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

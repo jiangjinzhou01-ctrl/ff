@@ -3,6 +3,7 @@ import { href, school } from '../lib/site';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import '../styles/global.css';
+import '../styles/interactions.css';
 interface Props { title: string; description: string; active?: string; home?: boolean; noindex?: boolean; searchable?: boolean; section?: string; schema?: Record<string, unknown>; }
 const { title, description, active = '', home = false, noindex = false, searchable = true, section = '学校信息', schema } = Astro.props;
 const fullTitle = `${title} | ${school.name} · 设计展示`;

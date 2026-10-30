@@ -1,0 +1,26 @@
+{
+  "base": "http://localhost:4321/ff/dizhi/",
+  "checks": [
+    "Pointer compression and scroll-cancel spring settle back to rest",
+    "Menu spring close restores page scroll and keyboard focus",
+    "Interrupted menu open/close/reopen has no stale opacity or lock",
+    "Rapid accordion reversal and single open mobile group retain natural height",
+    "Emulated touch: short menu drag returns, deliberate drag dismisses",
+    "Native internal menu pan and resize during exit never trap the page",
+    "FAQ reverses under rapid taps and remains keyboard accessible",
+    "Search preserves results while pending, waits for Chinese IME and clears accessibly",
+    "Desktop dropdowns reverse smoothly and close through Escape",
+    "PhotoSwipe zoom transition opens and closes without a stuck scroll lock",
+    "Live reduced-motion preference settles springs and disables spatial feedback",
+    "Motion ends at rest without idle animation or permanent layer promotion"
+  ],
+  "errors": [],
+  "browser": "154.0.8037.57",
+  "local_rAF_sample_ms": {
+    "median": 16.7,
+    "p95": 16.7,
+    "max": 16.8,
+    "count": 98
+  },
+  "passed": true
+}

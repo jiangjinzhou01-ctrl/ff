@@ -31,7 +31,7 @@ npm run preview
 - `src/content/news/`：5篇带原始日期和来源的独立报道摘要；新增文章无需复制HTML。
 - `src/content.config.ts`：文章字段、分类与草稿状态校验。
 - `src/styles/global.css`：统一色彩、排版、响应式与减少动态效果设置。
-- `src/scripts/`：原生菜单、真实搜索、地址复制、影像错误与局部进入效果。
+- `src/scripts/`：Motion mini 弹簧反馈、可拖动菜单、折叠栏、真实搜索、地址复制、影像错误与局部进入效果。
 - `public/media/`：明确CC BY 4.0授权的本校实景AVIF / WebP，每张4个尺寸，另有手机首屏裁切。
 - `src/assets/fonts/`：本地Noto CJK重命名子集，许可见 `docs/licenses/`。
 - `scripts/`：搜索索引、内部链接校验、静态输出同步、仓库级Pages artifact。
