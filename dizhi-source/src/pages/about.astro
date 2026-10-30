@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import SectionIndex from '../components/SectionIndex.astro';
+import SchoolImage from '../components/SchoolImage.astro';
+import SourceNote from '../components/SourceNote.astro';
+import Link from '../components/Link.astro';
+import { href } from '../lib/site';
+---
+<BaseLayout title="学校概况" description="了解湖南省地质中学的学校简介、1955年以来的办学历史、李四光精神、学校文化与校园环境。" active="about" section="学校概况">
+  <PageHeading title="学校概况" english="A SCHOOL ROOTED IN TIME" intro="时间沉淀底蕴，教育连接未来。认识一所与长沙共同生长的学校。" />
+  <figure class="about-panorama container"><SchoolImage id="e" alt="湖南省地质中学临人民中路的校门与教学楼" priority position="60% 50%" /><figcaption>人民中路168号 · 校园环境实景 · 2024年7月</figcaption></figure>
+  <div class="container indexed-layout">
+    <SectionIndex items={[["introduction","学校简介"],["history","办学历史"],["culture","理念与文化"],["environment","校园环境"],["honors","学校荣誉"]]} />
+    <div class="indexed-content">
+      <section id="introduction" class="reading-section"><span class="section-number">01</span><h2>一所学校，<br />一份绵延的教育初心。</h2><p class="reading-lead">湖南省地质中学创办于1955年，是长沙市教育局直属公办学校、湖南省示范性普通高级中学，设有初中和高中学段。</p><p>学校位于湖南省长沙市人民中路168号。地质行业的文化积淀与城市的教育发展在这里相遇，形成求实、探索、重视全面成长的校园气质。</p><p>在公开学校介绍中，科学教育、篮球与武术、艺术和劳动实践，构成了认识地中的不同侧面。本展示站据此整理学校信息，不刊载未经核实的师生规模、领导名单或升学数据。</p><SourceNote /></section>
+      <section id="history" class="reading-section history-document"><span class="section-number">02</span><h2>把时间，读成一条来路。</h2><div class="history-record"><article><time>1955</time><div><h3>学校创办</h3><p>学校的前身在长沙创办，开启办学历程。</p></div></article><article><time>2004</time><div><h3>省级示范性普通高级中学</h3><p>公开学校资料记载，学校于2004年获授湖南省示范性普通高级中学。</p></div></article><article><time>2019</time><div><h3>移交长沙市人民政府管理</h3><p>学校成为长沙市教育局直属公办学校，融入城市教育发展。</p></div></article><article><time>2024</time><div><h3>加入雅礼教育集团</h3><p>与长沙市雅礼中学缔结合作联盟，在教学、课程与人才培养等领域开展合作。</p></div></article></div><p class="source-note">校史依据阳光高考学校资料、公开招聘介绍及长沙晚报学校介绍交叉整理。仅列经公开资料支持的年份，不推定具体月日。<a href={href('sources.html#facts')}>查看逐项依据</a>。</p></section>
+      <section id="culture" class="reading-section"><span class="section-number">03</span><h2>求实的品格，<br />面向未来的眼光。</h2><blockquote>关爱全体学生，<br />推进整体进步。<cite>学校办学理念</cite></blockquote><p>学校以李四光精神为校园文化的重要基础，将科学精神、实践意识与学生全面发展联系起来。地质文化在这里所指向的，是尊重事实、保持好奇和勇于探索。</p><div class="culture-motto">严格 · 勤奋<br />求实 · 创新</div><p class="source-note">以上八字为学校校训。首页“在时间的积累中，向未来生长”及校训旁的简短释义为网站创意表达，不是学校官方口号。</p><SchoolImage id="b" alt="自然树影下，校园墙面上的严格勤奋求实创新校训" sizes="(min-width: 1024px) 65vw, 100vw" /></section>
+      <section id="environment" class="reading-section"><span class="section-number">04</span><h2>校园，是日常成长的容器。</h2><p>教学建筑、校门与林荫步道，让一所学校有了可以被看见的日常。本项目采用有明确开放许可的本校实景摄影，不以生成影像替代真实校园。</p><Link href={href('campus.html#gallery')}>浏览校园影像</Link></section>
+      <section id="honors" class="reading-section"><span class="section-number">05</span><h2>荣誉有据，成长有迹。</h2><div class="recognition"><span>办学资质</span><h3>湖南省示范性普通高级中学</h3><p>阳光高考学校资料与公开学校介绍均有记载。</p></div><div class="recognition"><span>体育成果 · 2024</span><h3>中国高中篮球联赛男子组全国总冠军</h3><p>湖南省人民政府门户网站于2024年5月21日报道。</p><Link href={href('news/basketball-champions.html')}>查看报道依据</Link></div><p class="source-note">其他荣誉、证书及授予年份，待学校提供可核实资料后补充。</p></section>
+    </div>
+  </div>
+</BaseLayout>

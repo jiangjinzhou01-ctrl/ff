@@ -1,0 +1,41 @@
+---
+import { navigation, school, href } from '../lib/site';
+import Icon from './Icon.astro';
+interface Props { active?: string; home?: boolean; }
+const { active = '', home = false } = Astro.props;
+---
+<div class="display-notice" data-pagefind-ignore><span>学校官网设计展示 · 非官方运营</span><a href={href('sources.html')}>关于本项目<Icon name="arrow-up-right" size={12} /></a></div>
+<header class:list={['site-header', { 'over-hero': home }]} id="site-header" data-pagefind-ignore>
+  <div class="header-inner">
+    <a href={href('index.html')} class="wordmark">
+      <strong>{school.name}</strong><span lang="en">{school.english}</span>
+    </a>
+    <nav class="desktop-nav" aria-label="主导航">
+      {navigation.map(item => <div class="nav-item">
+        <a href={href(`${item.key}.html`)} aria-current={active === item.key ? 'page' : undefined}>{item.label}</a>
+        <button class="submenu-toggle" aria-label={`展开${item.label}子栏目`} aria-expanded="false" aria-controls={`submenu-${item.key}`}><Icon name="caret-down" size={12} /></button>
+        <div id={`submenu-${item.key}`} class="submenu" hidden>
+          {item.children.map(([title, anchor]) => <a href={href(`${item.key}.html#${anchor}`)}>{title}<Icon name="arrow-up-right" size={15} /></a>)}
+        </div>
+      </div>)}
+    </nav>
+    <div class="header-actions">
+      <a href={href('search.html')} class="icon-button search-link" aria-label="搜索全站"><Icon name="magnifying-glass" /></a>
+      <button class="icon-button mobile-trigger" id="menu-open" aria-label="打开网站菜单" aria-controls="mobile-menu" aria-expanded="false"><Icon name="list" size={25} /></button>
+    </div>
+  </div>
+</header>
+<dialog id="mobile-menu" class="mobile-menu" aria-labelledby="menu-title" data-pagefind-ignore>
+  <div class="menu-top"><span id="menu-title">从这里，认识地中</span><button class="icon-button" data-menu-close aria-label="关闭网站菜单"><Icon name="x" size={25} /></button></div>
+  <div class="mobile-menu-scroll">
+    <a class="menu-home" href={href('index.html')}>首页<Icon name="arrow-right" /></a>
+    <nav aria-label="移动端主导航">
+      {navigation.map((item, i) => <details class="mobile-nav-group">
+        <summary><span class="menu-number">0{i + 1}</span><span>{item.label}</span><Icon name="caret-down" size={20} /></summary>
+        <div class="mobile-submenu"><a href={href(`${item.key}.html`)} aria-current={active === item.key ? 'page' : undefined}>{item.label}总览<Icon name="arrow-right" size={16} /></a>{item.children.map(([title, anchor]) => <a href={href(`${item.key}.html#${anchor}`)}>{title}</a>)}</div>
+      </details>)}
+    </nav>
+    <a class="menu-search" href={href('search.html')}><Icon name="magnifying-glass" />搜索学校、招生与校园资讯<Icon name="arrow-right" /></a>
+    <div class="menu-bottom"><p>严格 · 勤奋 · 求实 · 创新</p><span lang="en">SINCE 1955</span></div>
+  </div>
+</dialog>

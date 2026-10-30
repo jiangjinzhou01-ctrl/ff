@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Link from '../components/Link.astro';
+import { href } from '../lib/site';
+---
+<BaseLayout title="页面未找到" description="这个页面可能已移动。返回首页、浏览新闻或使用站内搜索继续查找。" noindex searchable={false}>
+  <div class="container not-found"><span class="not-found-number" aria-hidden="true">404</span><h1>这条路，暂时没有抵达。</h1><p>页面可能已移动，或链接输入有误。<br />从一个熟悉的入口，继续认识地中。</p><div><Link href={href('index.html')} kind="button">返回首页</Link><Link href={href('search.html')}>搜索全站</Link></div></div>
+</BaseLayout>

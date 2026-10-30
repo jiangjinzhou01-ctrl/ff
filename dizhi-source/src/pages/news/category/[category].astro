@@ -1,0 +1,14 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeading from '../../../components/PageHeading.astro';
+import NewsIndex from '../../../components/NewsIndex.astro';
+import { categories } from '../../../lib/site';
+export function getStaticPaths() { return categories.map(c => ({ params: { category: c.slug }, props: { category: c.name } })); }
+const { category } = Astro.props;
+const news = await getCollection('news');
+---
+<BaseLayout title={`${category} · 新闻动态`} description={`按${category}分类浏览湖南省地质中学公开报道，查看文章详情与来源。`} active="news" searchable={false}>
+  <PageHeading title="新闻动态" english="STORIES FROM DIZHONG" intro="记录学校的足迹，也记录每一种成长。公开报道，来源可查。" />
+  <NewsIndex news={news} category={category} />
+</BaseLayout>

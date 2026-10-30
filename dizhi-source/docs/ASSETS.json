@@ -1,0 +1,656 @@
+{
+  "checked": "2026-10-29",
+  "photos": [
+    {
+      "id": "a",
+      "author": "Huangdan2060",
+      "date": "2024-07-23",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Hunan_Dizhi_Middle_School_23_July_2024a.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Hunan_Dizhi_Middle_School_23_July_2024a.jpg",
+      "original_sha256": "1f5871ea35371f0f3b2c46c7d7d8437de5e66e8903b905abc2f8fa27fad98f86",
+      "changes": [
+        "WebP and AVIF conversion",
+        "responsive resizing",
+        "CSS display crop"
+      ],
+      "variants": [
+        {
+          "path": "public/media/campus-a-1280.avif",
+          "width": 1280,
+          "height": 960,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 129250,
+          "sha256": "f11e19722bfe6dbdb6218324d7621e21536af7dc636e36eeb69852447e564768"
+        },
+        {
+          "path": "public/media/campus-a-1280.webp",
+          "width": 1280,
+          "height": 960,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 339194,
+          "sha256": "9b5e692b4f48e277f37e0b431c7137c4f95a8ee91d437f2d3c26684aa782d1a0"
+        },
+        {
+          "path": "public/media/campus-a-1920.avif",
+          "width": 1920,
+          "height": 1440,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 279346,
+          "sha256": "ac9ad90d901ddb535eb7dff043812dc3a55e46209a1fb2cde48a85d02c41e5d5"
+        },
+        {
+          "path": "public/media/campus-a-1920.webp",
+          "width": 1920,
+          "height": 1440,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 717782,
+          "sha256": "e4b8a2e697d212e7a97decb0c93f35019aea3e6af7a66ab7363800651f0786a6"
+        },
+        {
+          "path": "public/media/campus-a-480.avif",
+          "width": 480,
+          "height": 360,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 17390,
+          "sha256": "6a48741cb1c73d58a010dd887ae6003be2d3d99679fe5e9e998a63b49e8e96c2"
+        },
+        {
+          "path": "public/media/campus-a-480.webp",
+          "width": 480,
+          "height": 360,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 49336,
+          "sha256": "4a120233fca34695317c974cedb9a7c43e16ff9cab853a22a1c8d09a1b9263dd"
+        },
+        {
+          "path": "public/media/campus-a-800.avif",
+          "width": 800,
+          "height": 600,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 49325,
+          "sha256": "b029a5520fb015d830034aba133fd9dc03a6a514bd94274f412f657caa338965"
+        },
+        {
+          "path": "public/media/campus-a-800.webp",
+          "width": 800,
+          "height": 600,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 133534,
+          "sha256": "e0bcedbff66c006a7d635f8598a2b338092df2e9a959bf3ce9891cb15f8a215e"
+        }
+      ]
+    },
+    {
+      "id": "b",
+      "author": "Huangdan2060",
+      "date": "2024-07-23",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Hunan_Dizhi_Middle_School_23_July_2024b.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Hunan_Dizhi_Middle_School_23_July_2024b.jpg",
+      "original_sha256": "25a68a6f9fdca49fde3f2571fe39581aef400061dae031bc52c8c7f12f17f216",
+      "changes": [
+        "WebP and AVIF conversion",
+        "responsive resizing",
+        "CSS display crop"
+      ],
+      "variants": [
+        {
+          "path": "public/media/campus-b-1280.avif",
+          "width": 1280,
+          "height": 960,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 88450,
+          "sha256": "7984ecb5555a23f382e51b31cd2dd94cc564a021646f7b063386b34d98b9287e"
+        },
+        {
+          "path": "public/media/campus-b-1280.webp",
+          "width": 1280,
+          "height": 960,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 281166,
+          "sha256": "d2c49d4dda839620a0ea79981cd22003e81085dde35aecf38ee10f32187fd6f8"
+        },
+        {
+          "path": "public/media/campus-b-1920.avif",
+          "width": 1920,
+          "height": 1440,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 228328,
+          "sha256": "731b3d2ee7bf201536186ad8651f6e1575216665569fc84fc961defe6c3dbd54"
+        },
+        {
+          "path": "public/media/campus-b-1920.webp",
+          "width": 1920,
+          "height": 1440,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 654856,
+          "sha256": "0baf01787af1e2fcfc2328c85b62f04e94e0cd0078162ed5a403e1782feed5e0"
+        },
+        {
+          "path": "public/media/campus-b-480.avif",
+          "width": 480,
+          "height": 360,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 10434,
+          "sha256": "98513919093e1aa06b8ade324874a3c0919192cad8bdb3dd363ba7f1b9177257"
+        },
+        {
+          "path": "public/media/campus-b-480.webp",
+          "width": 480,
+          "height": 360,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 29690,
+          "sha256": "c895f8438af7d932cc8cb46dfe4ea22154fec731ffc319aaa6ca46f26623ea9c"
+        },
+        {
+          "path": "public/media/campus-b-800.avif",
+          "width": 800,
+          "height": 600,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 28887,
+          "sha256": "02bba5f75c32b67c1fa3b1140ac0c1b5513286dc7b187f22efeb2c42808e5e08"
+        },
+        {
+          "path": "public/media/campus-b-800.webp",
+          "width": 800,
+          "height": 600,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 90666,
+          "sha256": "01940275042c21a7a471ad9c474de30808f2bdcaa2e3386b5f061a17d287b060"
+        }
+      ]
+    },
+    {
+      "id": "c",
+      "author": "Huangdan2060",
+      "date": "2024-07-23",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Hunan_Dizhi_Middle_School_23_July_2024c.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Hunan_Dizhi_Middle_School_23_July_2024c.jpg",
+      "original_sha256": "bf5a07311592a2ec095d77a9cd3e596ef6c59b2a67f4e5b8b4c09481230400f0",
+      "changes": [
+        "WebP and AVIF conversion",
+        "responsive resizing",
+        "CSS display crop"
+      ],
+      "variants": [
+        {
+          "path": "public/media/campus-c-1280.avif",
+          "width": 1280,
+          "height": 960,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 72792,
+          "sha256": "14d40c5d1974f1bedd7b0ba8e2fea8d36efcca65c9ad43e496425e6fe1b4bf65"
+        },
+        {
+          "path": "public/media/campus-c-1280.webp",
+          "width": 1280,
+          "height": 960,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 214256,
+          "sha256": "05890a197763280996580cb972c940b158104c10cb496fc4352291749c3af425"
+        },
+        {
+          "path": "public/media/campus-c-1920.avif",
+          "width": 1920,
+          "height": 1440,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 167773,
+          "sha256": "1cda1ada9113bed85331c3d341fa4e6f38677f7551f8f5ab2a4597cc558d200d"
+        },
+        {
+          "path": "public/media/campus-c-1920.webp",
+          "width": 1920,
+          "height": 1440,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 469270,
+          "sha256": "4b67d33d70d743dbfed7f5cf39b3fbf9b33c10853fb6d5f8a69f678270b282f1"
+        },
+        {
+          "path": "public/media/campus-c-480.avif",
+          "width": 480,
+          "height": 360,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 10529,
+          "sha256": "eaf8363e5eca5a46ab2e59477887cb7202ff28f095ee9bdab97d8b18f95a246c"
+        },
+        {
+          "path": "public/media/campus-c-480.webp",
+          "width": 480,
+          "height": 360,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 27774,
+          "sha256": "1651e5f96602429a777bc06e71d1ec742e29aa72b558a6345215181e9a1beba8"
+        },
+        {
+          "path": "public/media/campus-c-800.avif",
+          "width": 800,
+          "height": 600,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 27732,
+          "sha256": "b178ae3a177e8b6d2b78e43e390b2c8e43cfa9e72f580290a07027f27dbab52d"
+        },
+        {
+          "path": "public/media/campus-c-800.webp",
+          "width": 800,
+          "height": 600,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 78420,
+          "sha256": "c6e08d923373476ca08617ff8f18a8f58869220361ca7a24d30d9b1577571e34"
+        }
+      ]
+    },
+    {
+      "id": "d",
+      "author": "Huangdan2060",
+      "date": "2024-07-23",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Hunan_Dizhi_Middle_School_23_July_2024d.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Hunan_Dizhi_Middle_School_23_July_2024d.jpg",
+      "original_sha256": "8971e72066e2f41c5efebd262d27ac5ba7fef2171a86409708c7bf59474fdf07",
+      "changes": [
+        "WebP and AVIF conversion",
+        "responsive resizing",
+        "CSS display crop"
+      ],
+      "variants": [
+        {
+          "path": "public/media/campus-d-1280.avif",
+          "width": 1280,
+          "height": 960,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 60741,
+          "sha256": "1bbfc9a016faf3fdb8c628dc766e16ba489715174fc0d8f6065137bf619bc38b"
+        },
+        {
+          "path": "public/media/campus-d-1280.webp",
+          "width": 1280,
+          "height": 960,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 163842,
+          "sha256": "30e91dfff24b79465e6b9c49942082c17b65d78a926ce86db57a546e4d984a8b"
+        },
+        {
+          "path": "public/media/campus-d-1920.avif",
+          "width": 1920,
+          "height": 1440,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 133226,
+          "sha256": "f6dd77e19bb9b096df13b40ed6bdbfc09abbbf539d8a50a023428a4785814880"
+        },
+        {
+          "path": "public/media/campus-d-1920.webp",
+          "width": 1920,
+          "height": 1440,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 354172,
+          "sha256": "f33a1416bf38b7ba8c7e93baafce01de16e56b0da6d506287d1db129d109dae6"
+        },
+        {
+          "path": "public/media/campus-d-480.avif",
+          "width": 480,
+          "height": 360,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 10072,
+          "sha256": "3c3b05b3cee6a9c8b56ace12919e86e120d0b1e85622b3a733f9a3c1bba83c10"
+        },
+        {
+          "path": "public/media/campus-d-480.webp",
+          "width": 480,
+          "height": 360,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 23906,
+          "sha256": "7b985e71fb5017103c15c9558c359035a5509de09cd5fc204af26117c32b52b3"
+        },
+        {
+          "path": "public/media/campus-d-800.avif",
+          "width": 800,
+          "height": 600,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 24719,
+          "sha256": "ee378599ed0337e63642f64baed7c1fbff506b9cf9972771cb7e65429877f4ca"
+        },
+        {
+          "path": "public/media/campus-d-800.webp",
+          "width": 800,
+          "height": 600,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 63476,
+          "sha256": "0118d456b9f239526711cc9a158bf34922e493e5e801ae5a8d66f58a75723834"
+        }
+      ]
+    },
+    {
+      "id": "e",
+      "author": "Huangdan2060",
+      "date": "2024-07-23",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Hunan_Dizhi_Middle_School_23_July_2024e.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Hunan_Dizhi_Middle_School_23_July_2024e.jpg",
+      "original_sha256": "fd8fa3e3eff278da508deed491e97ddbae850d1427e54b377e25501cff488dc7",
+      "changes": [
+        "WebP and AVIF conversion",
+        "responsive resizing",
+        "CSS display crop",
+        "mobile portrait crop"
+      ],
+      "variants": [
+        {
+          "path": "public/media/campus-e-1280.avif",
+          "width": 1280,
+          "height": 960,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 84276,
+          "sha256": "b6fc62b6163370d981edcb8dc63a9c065ad867613665c012b34c173f12658a06"
+        },
+        {
+          "path": "public/media/campus-e-1280.webp",
+          "width": 1280,
+          "height": 960,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 228070,
+          "sha256": "0ea5be3d9cb57401f6a1c0487119c1ebec4981a0a472a269b33e75b953ca65c1"
+        },
+        {
+          "path": "public/media/campus-e-1920.avif",
+          "width": 1920,
+          "height": 1440,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 184653,
+          "sha256": "93ef84d4228c3100056f45ddb380f865a7bc286ba0d7dff626ff685918f6c842"
+        },
+        {
+          "path": "public/media/campus-e-1920.webp",
+          "width": 1920,
+          "height": 1440,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 490618,
+          "sha256": "79ad7a47b61f5d3184933739438a58320ff29dee57604c65cc4d3a5615432bef"
+        },
+        {
+          "path": "public/media/campus-e-480.avif",
+          "width": 480,
+          "height": 360,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 12296,
+          "sha256": "b4253d49d52af77c62dea666bc6cc90a983e7d0867e98e5bf4cf235026ba1b10"
+        },
+        {
+          "path": "public/media/campus-e-480.webp",
+          "width": 480,
+          "height": 360,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 32026,
+          "sha256": "fa8aa6894e9acfdca124b4e32a2ffc020b6135cd961488339398047b3eaeffc9"
+        },
+        {
+          "path": "public/media/campus-e-800.avif",
+          "width": 800,
+          "height": 600,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 32549,
+          "sha256": "dbffad227bedf8039740565eddfd254ea48e74ebedccfdcacc0297953c4e00d9"
+        },
+        {
+          "path": "public/media/campus-e-800.webp",
+          "width": 800,
+          "height": 600,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 86650,
+          "sha256": "109a9dfaccdb05c3768f54f58bfe5579877fc89c6cad2ad7f25b81b03514ad2f"
+        },
+        {
+          "path": "public/media/campus-e-portrait-1280.avif",
+          "width": 1280,
+          "height": 2418,
+          "format": "avif",
+          "crop": "portrait",
+          "bytes": 167129,
+          "sha256": "037dc50187ad4cb2d53e3e095bcb3d3cae7fcbefd62010785809ebc5246d9e28"
+        },
+        {
+          "path": "public/media/campus-e-portrait-480.avif",
+          "width": 480,
+          "height": 907,
+          "format": "avif",
+          "crop": "portrait",
+          "bytes": 29972,
+          "sha256": "91a5650c4e5e0e903173aefd0a62f697bfb0f3b8a9130ef38c8e6d42aad66fa4"
+        },
+        {
+          "path": "public/media/campus-e-portrait-800.avif",
+          "width": 800,
+          "height": 1511,
+          "format": "avif",
+          "crop": "portrait",
+          "bytes": 79751,
+          "sha256": "f86c1354a1619bab5dcb4a0a17240de31c1a1190cc0bfda9a562136ba66375e0"
+        }
+      ]
+    },
+    {
+      "id": "f",
+      "author": "Huangdan2060",
+      "date": "2024-07-23",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Hunan_Dizhi_Middle_School_23_July_2024f.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Hunan_Dizhi_Middle_School_23_July_2024f.jpg",
+      "original_sha256": "eb3fa0a825a3ce7c9257dcc35fcea702b94730537233ebd4086f6301e3bb1217",
+      "changes": [
+        "WebP and AVIF conversion",
+        "responsive resizing",
+        "CSS display crop"
+      ],
+      "variants": [
+        {
+          "path": "public/media/campus-f-1280.avif",
+          "width": 1280,
+          "height": 960,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 57055,
+          "sha256": "42ac75b4bca1056b6badcfd8111f32a85d97b024ed41dd49b52ac71c4d43b21b"
+        },
+        {
+          "path": "public/media/campus-f-1280.webp",
+          "width": 1280,
+          "height": 960,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 132178,
+          "sha256": "a9c6f6b18cc00f6fb3885d283863416062d067c47a8fa25e5fb29afdd992915d"
+        },
+        {
+          "path": "public/media/campus-f-1920.avif",
+          "width": 1920,
+          "height": 1440,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 111968,
+          "sha256": "9d893f25ac9d95f0163855fcf2fec829151421ace1b3076082ea9f0cf237536d"
+        },
+        {
+          "path": "public/media/campus-f-1920.webp",
+          "width": 1920,
+          "height": 1440,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 266992,
+          "sha256": "f7065f2229021e3b1777d4d803e44ef952010948710e2f3dfdd137b8104d81fb"
+        },
+        {
+          "path": "public/media/campus-f-480.avif",
+          "width": 480,
+          "height": 360,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 13053,
+          "sha256": "95a85c1c53dd683035ae8793a83dd02ea989eb85a3e529f71a9bb1bd3524280a"
+        },
+        {
+          "path": "public/media/campus-f-480.webp",
+          "width": 480,
+          "height": 360,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 22280,
+          "sha256": "4e11fb55be08d29bb6552236ecfb42dc0c29acc4cc05b67989a074e35270f373"
+        },
+        {
+          "path": "public/media/campus-f-800.avif",
+          "width": 800,
+          "height": 600,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 26419,
+          "sha256": "47eb2534cee862e7e21b7f3950ff6b51915c84997b8f29186f2d2ebb9d66cabb"
+        },
+        {
+          "path": "public/media/campus-f-800.webp",
+          "width": 800,
+          "height": 600,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 56814,
+          "sha256": "a93ecd4436368ea2debd9adf1b6f186f12f44babcac78e1dbb58d6c0ff99bd6a"
+        }
+      ]
+    },
+    {
+      "id": "h",
+      "author": "Huangdan2060",
+      "date": "2024-07-23",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Hunan_Dizhi_Middle_School_23_July_2024h.jpg",
+      "original_url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Hunan_Dizhi_Middle_School_23_July_2024h.jpg",
+      "original_sha256": "f6642abbf156f8b19f34bb422cf2e4f05771b347af4708af1e1be60e53f9c7a0",
+      "changes": [
+        "WebP and AVIF conversion",
+        "responsive resizing",
+        "CSS display crop"
+      ],
+      "variants": [
+        {
+          "path": "public/media/campus-h-1280.avif",
+          "width": 1280,
+          "height": 960,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 70309,
+          "sha256": "f1c573675c29b86ec73ed2e246ca1500f946821f0f4090eacb23bf3ac2ca929a"
+        },
+        {
+          "path": "public/media/campus-h-1280.webp",
+          "width": 1280,
+          "height": 960,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 205386,
+          "sha256": "ce0d86d85dd0c5a7f4f79372a198857ba850baa623cb3b8d672537b3ccd48c3c"
+        },
+        {
+          "path": "public/media/campus-h-1920.avif",
+          "width": 1920,
+          "height": 1440,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 163901,
+          "sha256": "273935a91c5f8df725318ab6b4c44a2290280e7e906ff47ab7f2ec68037d242f"
+        },
+        {
+          "path": "public/media/campus-h-1920.webp",
+          "width": 1920,
+          "height": 1440,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 448800,
+          "sha256": "7e9d36eedb10f91a2a8083ed19316d31517838da2bd63ed2e5ec8646e3719a3b"
+        },
+        {
+          "path": "public/media/campus-h-480.avif",
+          "width": 480,
+          "height": 360,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 9891,
+          "sha256": "bbed3e473ab359d117463fad28f2ae8128989a2d220c019cf123721f3c1dabb7"
+        },
+        {
+          "path": "public/media/campus-h-480.webp",
+          "width": 480,
+          "height": 360,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 26476,
+          "sha256": "0614641ebb0109f60929755b212c05ea5cebf4eac5fbc4929b1e9dd995040484"
+        },
+        {
+          "path": "public/media/campus-h-800.avif",
+          "width": 800,
+          "height": 600,
+          "format": "avif",
+          "crop": "original aspect",
+          "bytes": 26723,
+          "sha256": "b0ee968543dac195534c6dfc424d6f1900297a0d748f5afa24b94564252d242a"
+        },
+        {
+          "path": "public/media/campus-h-800.webp",
+          "width": 800,
+          "height": 600,
+          "format": "webp",
+          "crop": "original aspect",
+          "bytes": 75214,
+          "sha256": "b1b706543a3cbbd8668b2ba434eb5a2505fcaf67be76c0cd76e6203218d1d81f"
+        }
+      ]
+    }
+  ]
+}

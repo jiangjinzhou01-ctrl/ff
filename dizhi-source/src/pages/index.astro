@@ -1,0 +1,61 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SchoolImage from '../components/SchoolImage.astro';
+import Link from '../components/Link.astro';
+import Icon from '../components/Icon.astro';
+import { href, articleUrl, dateLabel } from '../lib/site';
+const news = (await getCollection('news', ({data}) => !data.draft)).sort((a,b) => b.data.date.valueOf() - a.data.date.valueOf());
+const lead = news[0];
+---
+<BaseLayout title="时间、探索与成长" description="认识湖南省地质中学：始于1955年的办学故事、严格勤奋求实创新的校训、科学与体艺教育，以及清晰可查的招生信息。非官方设计展示。" home section="首页">
+  <section class="arrival" id="arrival" aria-labelledby="arrival-title">
+    <SchoolImage id="e" alt="自然光下的湖南省地质中学校门标识与教学楼" class="arrival-image" priority sizes="100vw" position="66% 48%" mobilePortrait />
+    <div class="arrival-shade"></div>
+    <div class="container arrival-copy">
+      <p class="arrival-kicker">湖南省地质中学 <span>始于 1955</span></p>
+      <h1 id="arrival-title" data-pagefind-meta="title">在时间的积累中，<br />向未来生长。</h1>
+      <p class="arrival-sub">时间沉淀底蕴，探索开启成长。</p>
+      <Link href={href('about.html')} kind="outline">认识我们的学校</Link>
+    </div>
+    <div class="container arrival-bottom"><a href="#history" class="scroll-link"><span class="chapter-number">01</span><span>向下，读懂地中</span><Icon name="caret-down" size={18} /></a><span lang="en">TIME. DISCOVERY. GROWTH.</span><a href={href('sources.html#photography')} class="arrival-credit">校园实景 / 影像来源<Icon name="arrow-up-right" size={14} /></a></div>
+  </section>
+
+  <nav class="quick-access container" aria-label="常用信息"><a href={href('admissions.html')}><span>招生信息<small>为下一段成长做好准备</small></span><Icon name="arrow-up-right" /></a><a href={href('campus.html#gallery')}><span>校园影像<small>看见真实的地中</small></span><Icon name="arrow-up-right" /></a><a href={href('contact.html#visit')}><span>到校指引<small>人民中路168号</small></span><Icon name="arrow-up-right" /></a></nav>
+
+  <section class="legacy section-space container" id="history" aria-labelledby="legacy-title">
+    <div class="chapter-line"><span>02 / 时间的力量</span><span lang="en">A LEGACY SINCE 1955</span></div>
+    <div class="legacy-introduction"><h2 id="legacy-title">岁月有深度，<br />教育有温度。</h2><p>从地质人的教育初心出发，<br />在长沙，一代代少年从这里走向更广阔的世界。</p></div>
+    <div class="legacy-grid">
+      <div class="legacy-visual"><div class="legacy-years" aria-hidden="true"><span class="is-active" data-era-year="1955">1955</span><span data-era-year="2019">2019</span><span data-era-year="2024">2024</span></div><figure><SchoolImage id="c" alt="2024年拍摄的地质中学正门，非历史影像" sizes="(min-width: 768px) 50vw, 100vw" /><figcaption>校门实景 · 2024年7月 · 非历史影像</figcaption></figure></div>
+      <div class="legacy-stories"><article data-era="1955"><time>1955</time><h3>一份初心，在此扎根。</h3><p>湖南省地质中学创办。时间留下的不只是年份，更是一份绵延至今的育人责任。</p></article><article data-era="2019"><time>2019</time><h3>与城市教育，同向而行。</h3><p>学校移交长沙市人民政府管理，成为长沙市教育局直属公办学校。</p></article><article data-era="2024"><time>2024</time><h3>携手同行，打开新的可能。</h3><p>加入雅礼教育集团，在教育教学与人才培养中深化合作。</p></article><Link href={href('about.html#history')}>阅读办学历史</Link></div>
+    </div>
+  </section>
+
+  <section class="spirit section-space" aria-labelledby="spirit-title">
+    <div class="container spirit-top"><span class="chapter-number">03</span><h2 id="spirit-title">把求实的精神，<br />写进成长的每一天。</h2><p>以李四光精神为校园文化的重要基础，<br />让认真、坚持、实践与创造，成为面向未来的力量。</p></div>
+    <div class="container motto-words" aria-label="学校校训：严格、勤奋、求实、创新"><span class="reveal">严格<small>心有所敬</small></span><span class="reveal">勤奋<small>学有所恒</small></span><span class="reveal">求实<small>行有所据</small></span><span class="reveal">创新<small>思有所进</small></span></div>
+    <div class="container spirit-bottom"><p>关爱全体学生，推进整体进步。<span>学校办学理念</span></p><Link href={href('about.html#culture')}>了解学校文化</Link></div>
+  </section>
+
+  <section class="life section-space container" aria-labelledby="life-title">
+    <div class="life-title"><span class="chapter-number">04</span><h2 id="life-title">在这里，<br />成长发生。</h2><p>教室与步道之间，<br />藏着校园日常的尺度。</p><Link href={href('campus.html')}>探索校园生活</Link></div>
+    <figure class="life-main reveal"><a href={href('campus.html#gallery')}><SchoolImage id="a" alt="阳光洒在校园步道上，两侧是教学楼和树木" sizes="(min-width: 768px) 44vw, 100vw" position="45% 50%" /></a><figcaption>树影相伴的校园步道</figcaption></figure>
+    <figure class="life-small"><a href={href('campus.html#gallery')}><SchoolImage id="f" alt="地质中学教学建筑与校园入口" sizes="(min-width: 768px) 28vw, 60vw" /></a><figcaption>与学习相伴的空间</figcaption></figure>
+    <div class="life-foot"><span lang="en">LIFE AT DIZHONG</span><p>所有照片均为本校实景。更多课堂、社团与师生活动影像，待校方授权后收录。</p></div>
+  </section>
+
+  <section class="beyond section-space" aria-labelledby="beyond-title">
+    <div class="container"><div class="chapter-line"><span>05 / 不止于课堂</span><span lang="en">BEYOND THE CLASSROOM</span></div>
+    <h2 id="beyond-title">让热爱，<span>走向更大的世界。</span></h2>
+    <div class="beyond-feature"><div class="sport-year" aria-hidden="true">2024<span>篮球</span></div><div class="sport-story"><p class="news-category">体教融合 · 公开报道</p><h3>从校园球场，<br />走向全国赛场。</h3><p>地中男篮获得2023至2024赛季中国高中篮球联赛男子组全国总冠军。坚持与协作，在球场上有了鲜明的注脚。</p><Link href={articleUrl('basketball-champions')}>阅读篮球报道</Link><span class="source-note">依据湖南省人民政府门户网站2024年5月21日报道</span></div></div>
+    <div class="beyond-links"><a href={href('education.html#science')}><span>科学教育</span><p>从观察与实验开始，让好奇心找到方向。</p><Icon name="arrow-up-right" /></a><a href={href('education.html#specialties')}><span>武术与艺术</span><p>在身体与表达中，认识成长的更多可能。</p><Icon name="arrow-up-right" /></a></div></div>
+  </section>
+
+  <section class="home-news section-space container" aria-labelledby="home-news-title">
+    <div class="section-title"><div><span class="chapter-number">06</span><h2 id="home-news-title">地中的近况，<br />值得被看见。</h2></div><Link href={href('news.html')}>查看全部新闻</Link></div>
+    {lead && <div class="home-news-grid"><article class="lead-news"><figure><a href={articleUrl(lead.id)}><SchoolImage id="b" alt="树影映在地质中学校训墙上，校园资料图" sizes="(min-width: 768px) 52vw, 100vw" /></a><figcaption>校园校训墙资料图 · 2024年7月 · 非报道活动现场</figcaption></figure><div class="news-meta"><span>{lead.data.category}</span><time datetime={lead.data.date.toISOString().slice(0,10)}>{dateLabel(lead.data.date)}</time></div><h3><a href={articleUrl(lead.id)}>{lead.data.title}</a></h3><p>{lead.data.description}</p><Link href={articleUrl(lead.id)}>阅读报道</Link></article><div class="home-news-list">{news.slice(1,4).map(n => <article><div class="news-meta"><span>{n.data.category}</span><time datetime={n.data.date.toISOString().slice(0,10)}>{dateLabel(n.data.date)}</time></div><h3><a href={articleUrl(n.id)}>{n.data.title}<Icon name="arrow-up-right" /></a></h3><p>{n.data.description}</p></article>)}<p class="source-note">本栏目为公开报道的独立摘要，所示日期为原始报道日期。</p></div></div>}
+  </section>
+
+  <section class="journey" aria-labelledby="journey-title"><SchoolImage id="a" alt="午后安静的校园步道延伸向树荫深处" sizes="100vw" position="50% 58%" /><div class="journey-shade"></div><div class="container journey-copy"><span class="chapter-number">07 / 下一段旅程</span><h2 id="journey-title">下一段旅程，<br />从这里开始。</h2><p>带着好奇与期待，认识你未来的成长之地。</p><Link href={href('admissions.html')} kind="outline">了解招生信息</Link><div class="journey-links"><a href={href('about.html')}>认识我们的学校<Icon name="arrow-up-right" size={16} /></a><a href={href('campus.html')}>探索校园生活<Icon name="arrow-up-right" size={16} /></a></div></div></section>
+</BaseLayout>

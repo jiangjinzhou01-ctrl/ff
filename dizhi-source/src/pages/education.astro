@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import SectionIndex from '../components/SectionIndex.astro';
+import Link from '../components/Link.astro';
+import SourceNote from '../components/SourceNote.astro';
+import { href, articleUrl } from '../lib/site';
+---
+<BaseLayout title="教育教学" description="从科学教育、课程与教研，到篮球、武术、艺术与劳动实践，了解湖南省地质中学公开资料中的教育特色。" active="education" section="教育教学">
+  <PageHeading title="教育教学" english="CURIOSITY BECOMES POSSIBILITY" intro="从一个问题出发，把求知的热情带向更开阔的世界。" />
+  <div class="education-manifesto container"><span>观察</span><span>思考</span><span>实践</span><span>创造</span></div>
+  <div class="container indexed-layout">
+    <SectionIndex items={[["curriculum","课程与教研"],["science","科学教育"],["specialties","体育与艺术"],["practice","实践与育人"]]} />
+    <div class="indexed-content">
+      <section class="reading-section" id="curriculum"><span class="section-number">01</span><h2>让每一次学习，<br />都有抵达的方向。</h2><p class="reading-lead">“关爱全体学生，推进整体进步”，是公开学校介绍中明确记载的办学理念。</p><p>学校与雅礼中学的合作涉及教育教学、队伍建设和课程建设等领域。具体的课程设置、学科活动安排与教研成果，应由校方正式确认与发布。</p><div class="quiet-notice"><h3>课程与教研资料待校方补充</h3><p>本展示站尚未收录经学校确认的课程表、教学计划或成果文件。当前可从已核实报道中了解学校的育人实践。</p><Link href={href('news/category/education.html')}>阅读教学报道</Link></div><SourceNote /></section>
+      <section class="reading-section" id="science"><span class="section-number">02</span><h2>好奇心，<br />是探索世界的起点。</h2><p>科学精神并不止于知识的掌握，也体现在观察、实验与验证的过程里。学校以李四光精神为校园文化的重要基础，将科学探索与学生成长相联系。</p><article class="education-report"><p class="news-category">校外科学实践 · 2024年8月</p><h3>走进湖南省地质实验测试中心</h3><p>夏令营同学观察土壤测试实验，借助显微镜认识地质矿物，让科学方法成为具体的体验。</p><Link href={articleUrl('science-education')}>阅读科学实践报道</Link></article><p class="source-note">依据红网2024年8月16日报道。本文不将历史活动描述为持续开放的常设课程。</p></section>
+      <section class="reading-section" id="specialties"><span class="section-number">03</span><h2>在热爱中，<br />认识自己的力量。</h2><div class="specialty-list"><article><span>01</span><div><h3>篮球</h3><p>学校的传统体育特色之一。地中男篮于2024年获得中国高中篮球联赛男子组全国总冠军。</p><Link href={articleUrl('basketball-champions')}>查看体育报道</Link></div></article><article><span>02</span><div><h3>武术</h3><p>公开学校介绍记载的特色体育项目。具体训练、参与条件与当年安排，待校方发布。</p></div></article><article><span>03</span><div><h3>艺术实践</h3><p>公开介绍将艺术与校园文化列为学生发展的一部分。课程、演出与作品资料待校方授权后收录。</p></div></article></div><SourceNote /></section>
+      <section class="reading-section" id="practice"><span class="section-number">04</span><h2>让所学，<br />与真实生活相遇。</h2><p>长沙晚报学校介绍记录了厨艺劳动等德育实践活动。动手、协作与承担责任，为课堂之外的成长提供了观察角度。</p><div class="education-report"><p class="news-category">德育研讨 · 2026年1月</p><h3>关注每一个完整的人</h3><p>从知识学习到生命成长，学校开展德育研讨，交流日常育人的实践与思考。</p><Link href={articleUrl('moral-education')}>阅读育人报道</Link></div></section>
+    </div>
+  </div>
+</BaseLayout>

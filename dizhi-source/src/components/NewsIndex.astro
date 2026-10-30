@@ -1,0 +1,17 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { categories, articleUrl, href } from '../lib/site';
+import Icon from './Icon.astro';
+interface Props { news: CollectionEntry<'news'>[]; category?: string; }
+const { news, category = '' } = Astro.props;
+const items = news.filter(n => !n.data.draft && (!category || n.data.category === category)).sort((a,b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<section class="container news-index" id="reports">
+  <nav class="news-filters" aria-label="新闻分类"><a href={href('news.html')} aria-current={!category ? 'page' : undefined}>全部报道</a>{categories.map(c => <a href={href(`news/category/${c.slug}.html`)} aria-current={c.name === category ? 'page' : undefined}>{c.name}</a>)}</nav>
+  <p class="news-index-note">公开报道精选 · {items.length} 篇{category ? ` · ${category}` : ''}<span>日期为原始报道发布日期</span></p>
+  {items.length ? <div class="news-rows">{items.map(n => <article class="news-row">
+    <time datetime={n.data.date.toISOString().slice(0,10)}><strong>{n.data.date.toISOString().slice(8,10)}</strong><span>{n.data.date.toISOString().slice(0,7).replace('-', '.')}</span></time>
+    <div class="news-row-main"><p class="news-category">{n.data.category}</p><h2><a href={articleUrl(n.id)}>{n.data.title}</a></h2><p>{n.data.description}</p><span class="news-source">{n.data.source.name}</span></div>
+    <a class="news-row-arrow icon-button" href={articleUrl(n.id)} aria-label={`阅读：${n.data.title}`}><Icon name="arrow-up-right" size={28} /></a>
+  </article>)}</div> : <div class="empty-state"><span class="empty-number" aria-hidden="true">00</span><h2>暂无已核实的{category}</h2><p>本站尚未收录此类内容。学校正式通知请通过校方信息渠道查询。</p><a class="action action-text" href={href('news.html')}>查看全部报道<Icon name="arrow-right" /></a></div>}
+</section>

@@ -1,0 +1,42 @@
+---
+import { href, school } from '../lib/site';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import '../styles/global.css';
+interface Props { title: string; description: string; active?: string; home?: boolean; noindex?: boolean; searchable?: boolean; section?: string; schema?: Record<string, unknown>; }
+const { title, description, active = '', home = false, noindex = false, searchable = true, section = '学校信息', schema } = Astro.props;
+const fullTitle = `${title} | ${school.name} · 设计展示`;
+const routePath = Astro.url.pathname.replace(/\/$/, '');
+const canonicalPath = home ? href('') : routePath.endsWith('.html') ? routePath : `${routePath}.html`;
+const canonical = new URL(canonicalPath, Astro.site);
+const structuredData = schema || { '@context': 'https://schema.org', '@type': 'WebPage', name: fullTitle, description, url: canonical.toString(), inLanguage: 'zh-CN', isPartOf: { '@type': 'WebSite', name: '湖南省地质中学 · 非官方设计展示', url: new URL(href(''), Astro.site).toString() } };
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#F6F3ED" /><meta name="color-scheme" content="light" />
+    <title>{fullTitle}</title><meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <meta property="og:type" content="website" /><meta property="og:title" content={fullTitle} /><meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} /><meta property="og:locale" content="zh_CN" /><meta property="og:site_name" content="湖南省地质中学 · 设计展示" />
+    <meta property="og:image" content={new URL(href('media/campus-e-1280.webp'), Astro.site)} /><meta property="og:image:alt" content="湖南省地质中学校园实景，Huangdan2060 摄影，CC BY 4.0" />
+    <link rel="icon" href={href('favicon.svg')} type="image/svg+xml" />
+    <link rel="sitemap" href={href('sitemap-index.xml')} />
+    {home && <><link rel="preload" as="image" type="image/avif" media="(min-width: 768px)" imagesrcset={[480,800,1280,1920].map(w => `${href(`media/campus-e-${w}.avif`)} ${w}w`).join(', ')} imagesizes="100vw" fetchpriority="high" /><link rel="preload" as="image" type="image/avif" media="(max-width: 767px)" imagesrcset={[480,800,1280].map(w => `${href(`media/campus-e-portrait-${w}.avif`)} ${w}w`).join(', ')} imagesizes="100vw" fetchpriority="high" /></>}
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData).replaceAll('<', '\u003c')} />
+    <style>@view-transition{navigation:auto}</style>
+  </head>
+  <body id="top" class:list={[{ 'home-page': home }]} data-base={href('')}>
+    <a class="skip-link" href="#main">跳至正文</a>
+    <SiteHeader active={active} home={home} />
+    <main id="main" tabindex="-1" data-pagefind-body={searchable || undefined} data-pagefind-ignore={!searchable ? 'all' : undefined}>
+      {searchable && <span class="sr-only" data-pagefind-meta="section" data-pagefind-filter="section">{section}</span>}
+      <slot />
+    </main>
+    <SiteFooter />
+    <script>import '../scripts/site';</script>
+    <noscript><style>.mobile-trigger,.submenu-toggle{display:none!important}.reveal{opacity:1!important;transform:none!important}</style><div class="noscript-note container">当前浏览器未启用 JavaScript。所有正文、新闻分类与导航链接仍可访问；全文搜索、地址复制与图片缩放需启用 JavaScript。</div></noscript>
+  </body>
+</html>

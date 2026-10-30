@@ -1,0 +1,10 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import Link from '../components/Link.astro';
+import { school } from '../lib/site';
+---
+<BaseLayout title="党群建设与校务公开" description="湖南省地质中学党群建设及校务公开栏目设计展示。本站尚未取得校方授权供稿，正式文件请通过学校与教育主管部门查阅。" active="disclosure" section="党群与公开">
+  <PageHeading title="党群与公开" english="RESPONSIBILITY & TRANSPARENCY" intro="以真实的内容承载公共机构的责任，以清晰的方式呈现公开信息。" />
+  <div class="container disclosure-layout"><aside><p>栏目说明</p><h2>正式信息，<br />应有正式出处。</h2><p>本页为网站栏目设计展示。原学校平台当前无法完成栏目核查，以下结构待学校确认；本站尚未取得授权供稿，不代学校发布任何行政信息。</p></aside><div><section class="reading-section" id="party"><span class="section-number">01</span><h2>党群建设</h2><div class="empty-state compact"><h3>暂无已授权的校方内容</h3><p>党务动态、群团活动等资料，待学校确认栏目设置并提供可公开内容后收录。</p></div></section><section class="reading-section" id="public"><span class="section-number">02</span><h2>校务公开</h2><div class="empty-state compact"><h3>暂无经核实的公开文件</h3><p>本站不制作或仿写学校公告、公章、领导讲话与行政文件。正式通知、公开事项及办理要求，请通过校方平台查询。</p><Link href={school.official}>访问学校信息平台</Link></div></section></div></div>
+</BaseLayout>

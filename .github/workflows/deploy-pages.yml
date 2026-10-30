@@ -1,0 +1,55 @@
+name: Build and deploy GitHub Pages
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: dizhi-source/package-lock.json
+      - name: Install locked dependencies
+        run: npm ci
+        working-directory: dizhi-source
+      - name: Check content and TypeScript
+        run: npm run check
+        working-directory: dizhi-source
+      - name: Generate static pages and Chinese search index
+        run: npm run build
+        working-directory: dizhi-source
+      - name: Verify all internal links and assets
+        run: npm run verify
+        working-directory: dizhi-source
+      - name: Stage repository root and school subtree
+        run: npm run stage:pages
+        working-directory: dizhi-source
+      - uses: actions/configure-pages@v5
+        if: github.event_name != 'pull_request'
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy Pages artifact
+        id: deployment
+        uses: actions/deploy-pages@v4
