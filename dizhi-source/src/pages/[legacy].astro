@@ -1,0 +1,6 @@
+---
+import { href } from '../lib/site';
+export function getStaticPaths() { return ['seventy-years', 'basketball-champions', 'science-education'].map(legacy => ({ params: { legacy } })); }
+const target = href(`news/${Astro.params.legacy}.html`);
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="robots" content="noindex, follow" /><meta http-equiv="refresh" content={`0;url=${target}`} /><link rel="canonical" href={new URL(target, Astro.site)} /><title>报道页面已迁移 | 湖南省地质中学 · 设计展示</title></head><body><main><h1>报道页面已迁移</h1><p><a href={target}>前往新的报道页面</a></p></main><script define:vars={{ target }}>location.replace(target + location.search + location.hash);</script></body></html>

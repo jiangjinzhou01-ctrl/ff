@@ -1,0 +1,22 @@
+---
+import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SchoolImage from '../../components/SchoolImage.astro';
+import Link from '../../components/Link.astro';
+import { href, dateLabel, articleUrl } from '../../lib/site';
+export async function getStaticPaths() { return (await getCollection('news', ({data}) => !data.draft)).map(entry => ({ params: { slug: entry.id }, props: { entry } })); }
+interface Props { entry: CollectionEntry<'news'>; }
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const related = (await getCollection('news', ({id, data}) => id !== entry.id && !data.draft)).sort((a,b) => Number(b.data.category === entry.data.category) - Number(a.data.category === entry.data.category) || b.data.date.valueOf() - a.data.date.valueOf()).slice(0,2);
+---
+<BaseLayout title={entry.data.seoTitle || entry.data.title} description={entry.data.description} active="news" section={entry.data.category}>
+  <article class="article-page container">
+    <nav class="breadcrumb" aria-label="当前位置"><a href={href('index.html')}>首页</a><span>/</span><a href={href('news.html')}>新闻动态</a><span>/</span><span>{entry.data.category}</span></nav>
+    <header class="article-header"><p class="news-category">{entry.data.category} · 公开报道摘要</p><h1 data-pagefind-meta="title">{entry.data.title}</h1><p class="article-description">{entry.data.description}</p><div class="article-meta"><time datetime={entry.data.date.toISOString().slice(0,10)}>原始报道日期：{dateLabel(entry.data.date)}</time><span>来源：{entry.data.source.name}</span></div></header>
+    {entry.data.cover && <figure class="article-cover"><SchoolImage id={entry.data.cover} alt="湖南省地质中学校园环境资料图" priority /><figcaption>{entry.data.coverCaption}</figcaption></figure>}
+    <div class="article-reading"><div class="article-body"><Content /></div><aside class="article-source"><h2>阅读原始报道</h2><p>{entry.data.source.title}</p><p>{entry.data.source.name} · {dateLabel(entry.data.date)}</p><Link href={entry.data.source.url}>查看来源原文</Link><p class="source-note">本站为非官方设计展示。本文采用独立摘要，不代表学校正式发布。历史报道中的政策与安排不适用于其他年份。</p></aside></div>
+    <section class="related-news" data-pagefind-ignore><h2>继续阅读</h2>{related.map(n => <a href={articleUrl(n.id)}><span>{n.data.category}</span><h3>{n.data.title}</h3><time>{dateLabel(n.data.date)}</time></a>)}<Link href={href('news.html')}>返回全部新闻</Link></section>
+  </article>
+</BaseLayout>

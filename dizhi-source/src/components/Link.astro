@@ -1,0 +1,9 @@
+---
+import Icon from './Icon.astro';
+interface Props { href: string; kind?: 'text' | 'button' | 'outline'; class?: string; external?: boolean; }
+const { href, kind = 'text', class: className = '', external = href.startsWith('http') } = Astro.props;
+---
+<a href={href} class:list={['action', `action-${kind}`, className]} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}>
+  <span><slot /></span><Icon name={external ? 'arrow-square-out' : 'arrow-right'} />
+  {external && <span class="sr-only">（在新窗口打开）</span>}
+</a>

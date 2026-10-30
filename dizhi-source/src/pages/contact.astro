@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import SchoolImage from '../components/SchoolImage.astro';
+import Link from '../components/Link.astro';
+import Icon from '../components/Icon.astro';
+import SourceNote from '../components/SourceNote.astro';
+import { href, school } from '../lib/site';
+const mapUrl = `https://uri.amap.com/search?keyword=${encodeURIComponent('湖南省地质中学 人民中路168号')}&city=${encodeURIComponent('长沙')}&view=map`;
+---
+<BaseLayout title="联系我们" description="湖南省地质中学位于湖南省长沙市人民中路168号。查看校园地图入口、到校指引及经公开资料列示的信息渠道。" active="contact" section="联系我们">
+  <PageHeading title="联系我们" english="FIND YOUR WAY HERE" intro="在人民中路，认识地中。来访之前，请先确认校方安排。" />
+  <section class="container contact-layout" id="visit"><div class="contact-copy"><span class="section-number">到校指引</span><h2>湖南省地质中学</h2><p class="contact-address">湖南省长沙市<br />人民中路168号</p><div class="contact-actions"><Link href={mapUrl} kind="button">打开校园地图</Link><button class="action action-text" data-copy-address={school.address}><span>复制地址</span><Icon name="copy" /></button></div><p class="copy-status" role="status" aria-live="polite"></p><SourceNote /><div class="contact-travel"><h3>出行与来访</h3><p>请使用地图核对当日公交、地铁与步行路线。公开学校介绍提及地铁6号线，具体站点、出口及实时路线以交通运营信息为准。</p><p>校园不等同于公共开放场所。请通过学校信息渠道确认入校要求与开放安排，地图入口不提供预约功能。</p></div></div><figure><SchoolImage id="c" alt="湖南省地质中学正门实景" priority position="50% 45%" /><figcaption>校园正门 · 2024年7月23日 · Huangdan2060 摄影</figcaption></figure></section>
+  <section class="container contact-channels reading-section" id="channels"><span class="section-number">信息渠道</span><h2>让联系，建立在准确信息上。</h2><div class="official-channels"><article><h3>学校信息平台</h3><p>公开学校介绍列示地址：hndzzx.csedu.gov.cn。网络访问状态可能变化，请核对平台发布信息。</p><Link href={school.official}>访问学校信息平台</Link></article><article><h3>招生与政策咨询</h3><p>当前校方咨询电话与邮箱尚未完成核实。请从校方正式公告获取，本站不以历史号码代替当前联系方式。</p><Link href={href('admissions.html')}>查看招生信息导引</Link></article></div><p class="source-note">本站为非官方设计展示，不设在线客服、留言受理或学生信息收集功能。</p></section>
+</BaseLayout>

@@ -1,0 +1,11 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import NewsIndex from '../components/NewsIndex.astro';
+const news = await getCollection('news');
+---
+<BaseLayout title="新闻动态" description="查阅关于湖南省地质中学的公开报道精选，按教育教学、校园活动、科学教育及体育风采分类浏览，查看日期与原始来源。" active="news" section="新闻动态">
+  <PageHeading title="新闻动态" english="STORIES FROM DIZHONG" intro="记录学校的足迹，也记录每一种成长。公开报道，来源可查。" />
+  <NewsIndex news={news} />
+</BaseLayout>

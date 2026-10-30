@@ -1,0 +1,5 @@
+{
+  "passed": true,
+  "name": "Cross-page Back and persisted page lifecycle preserve gallery and header observers",
+  "runtime_errors": []
+}

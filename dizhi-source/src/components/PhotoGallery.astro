@@ -1,0 +1,35 @@
+---
+import { photos, href } from '../lib/site';
+import SchoolImage from './SchoolImage.astro';
+import Icon from './Icon.astro';
+---
+<div class="photo-gallery" id="campus-gallery">
+  {photos.map((photo, i) => <figure class:list={['gallery-figure', `gallery-${i}`]}>
+    <a href={href(`media/campus-${photo.id}-1920.webp`)} data-pswp-srcset={[480,800,1280,1920].map(w => `${href(`media/campus-${photo.id}-${w}.webp`)} ${w}w`).join(', ')} data-pswp-width="1920" data-pswp-height="1440" data-caption={`${photo.title} · 2024年7月23日 · Huangdan2060 摄影 · CC BY 4.0 · 已压缩`} aria-label={`放大图片：${photo.title}`}>
+      <SchoolImage id={photo.id} alt={photo.alt} position={photo.position} sizes={i === 0 ? '(min-width: 768px) 60vw, 100vw' : '(min-width: 768px) 40vw, 100vw'} />
+      <span class="gallery-zoom"><Icon name="arrow-square-out" size={20} /><span class="sr-only">放大</span></span>
+    </a>
+    <figcaption><span>{photo.title}</span><span>0{i+1}</span></figcaption>
+  </figure>)}
+</div>
+<p class="source-note">全部为本校环境实景，摄于2024年7月23日。Huangdan2060 摄影，<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>，已压缩与裁切。<a href={href('sources.html#photography')}>逐张查看原始来源</a>。</p>
+<script>
+  import PhotoSwipeLightbox from 'photoswipe/lightbox';
+  import 'photoswipe/style.css';
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '#campus-gallery', children: 'figure > a', pswpModule: () => import('photoswipe'),
+    showHideAnimationType: reduced ? 'none' : 'fade', showAnimationDuration: 200, hideAnimationDuration: 160,
+    bgOpacity: .96, padding: { top: 65, bottom: 85, left: 16, right: 16 },
+    closeTitle: '关闭图片', zoomTitle: '缩放图片', arrowPrevTitle: '上一张图片', arrowNextTitle: '下一张图片',
+    errorMsg: '图片暂时无法加载，请关闭后重试。', indexIndicatorSep: ' / ',
+  });
+  lightbox.on('uiRegister', () => {
+    lightbox.pswp?.ui?.registerElement({ name: 'caption', order: 9, isButton: false, appendTo: 'root', onInit: (el, pswp) => {
+      el.setAttribute('aria-live', 'polite');
+      pswp.on('change', () => { el.textContent = pswp.currSlide?.data.element?.getAttribute('data-caption') || ''; });
+    }});
+  });
+  lightbox.init();
+  window.addEventListener('pagehide', event => { if (!event.persisted) lightbox.destroy(); });
+</script>

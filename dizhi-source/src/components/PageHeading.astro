@@ -1,0 +1,10 @@
+---
+import { href } from '../lib/site';
+interface Props { title: string; english: string; intro: string; }
+const { title, english, intro } = Astro.props;
+---
+<div class="page-heading container">
+  <nav class="breadcrumb" aria-label="当前位置"><a href={href('index.html')}>首页</a><span aria-hidden="true">/</span><span>{title}</span></nav>
+  <div class="page-title-row"><h1 data-pagefind-meta="title">{title}</h1><span lang="en">{english}</span></div>
+  <p class="page-intro">{intro}</p>
+</div>

@@ -1,0 +1,6 @@
+---
+import { school, href } from '../lib/site';
+interface Props { url?: string; label?: string; }
+const { url = school.source, label = '长沙晚报 · 学校介绍（2025）' } = Astro.props;
+---
+<p class="source-note">资料依据：<a href={url} target="_blank" rel="noopener noreferrer">{label}<span class="sr-only">（在新窗口打开）</span></a>。<a href={href('sources.html')}>查看核查与素材说明</a>。</p>

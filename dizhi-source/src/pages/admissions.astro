@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import SectionIndex from '../components/SectionIndex.astro';
+import Link from '../components/Link.astro';
+import Icon from '../components/Icon.astro';
+import { href, school } from '../lib/site';
+const questions = [
+  ['学校设有哪些学段？', '湖南省地质中学设有初中和高中学段。各学段当年的招生范围、条件与安排，请查看学校及教育主管部门正式发布的招生文件。'],
+  ['这里的信息能作为报名和录取依据吗？', '不能。本站是非官方设计展示，提供资料导引，不受理报名。招生计划、志愿填报、录取要求、收费及时间安排均以当年正式公告为准。'],
+  ['在哪里查看当年的招生政策？', '优先查看学校信息平台和长沙市教育局发布的当年文件。请核对文件的发布单位、适用学段、年份与发布日期，再按原文要求办理。'],
+  ['以前的录取分数能作为今年的承诺吗？', '不能。不同年份的考试、计划与录取情况可能不同。本站不提供录取承诺，也不使用往年分数预测当年录取结果。'],
+  ['可以在本站填写报名资料吗？', '本站没有报名系统，也不收集学生姓名、身份证号、成绩或联系方式。请仅使用校方当年正式公布的办理渠道。'],
+  ['可以到学校现场了解吗？', '学校位于湖南省长沙市人民中路168号。请通过学校渠道确认来访及入校安排，遵守校园管理要求，不将地图入口视为预约凭证。'],
+];
+---
+<BaseLayout title="招生信息" description="湖南省地质中学招生信息导引，区分初中与高中学段，提供年度资料状态、政策核对、重要时间、常见问题及官方信息渠道。不受理报名。" active="admissions" section="招生信息">
+  <PageHeading title="招生信息" english="YOUR NEXT CHAPTER" intro="让重要的信息清晰可查，让下一段成长从充分了解开始。" />
+  <div class="admission-summary container"><div><span class="admission-year">2026</span><h2>招生信息导引</h2><p>适用年份需与正式公告一致</p></div><div class="admission-status"><Icon name="book-open" size={28} /><div><strong>本站尚未收录经核实的2026年招生通知</strong><p>这表示本展示站的收录状态，不代表学校尚未发布。请直接查阅学校与教育主管部门渠道。</p><Link href="#channels">查看信息渠道</Link></div></div></div>
+  <div class="container indexed-layout admissions-body"><SectionIndex items={[["junior","初中招生"],["senior","高中招生"],["policy","招生政策"],["dates","重要时间"],["faq","常见问题"],["documents","相关文件"],["channels","信息渠道"]]} /><div class="indexed-content">
+    <section class="reading-section admission-grade" id="junior"><span class="section-number">初中学段</span><h2>初中招生</h2><p>从小学到初中，首先确认当年的招生范围、入学条件与办理方式。</p><dl class="admission-facts"><div><dt>招生范围与条件</dt><dd>待当年正式公告核实</dd></div><div><dt>招生计划</dt><dd>本站未收录</dd></div><div><dt>办理方式与材料</dt><dd>以学校及教育主管部门当年文件为准</dd></div></dl><Link href="#channels">前往信息渠道</Link></section>
+    <section class="reading-section admission-grade" id="senior"><span class="section-number">高中学段</span><h2>高中招生</h2><p>从初中到高中，请先了解当年的中招政策，再核对学校招生通知。</p><dl class="admission-facts"><div><dt>招生计划与报考要求</dt><dd>待当年正式公告核实</dd></div><div><dt>录取分数与收费标准</dt><dd>本站未收录，不作预测或承诺</dd></div><div><dt>志愿填报与录取安排</dt><dd>以教育主管部门正式发布为准</dd></div></dl><Link href="#channels">前往信息渠道</Link></section>
+    <section class="reading-section" id="policy"><span class="section-number">政策核对</span><h2>读一份通知，<br />先确认这四件事。</h2><ol class="policy-checklist"><li><strong>年份</strong><span>是否为所报考学年的有效文件。</span></li><li><strong>发布单位</strong><span>是否来自学校或教育主管部门。</span></li><li><strong>学段与对象</strong><span>是否适用于自己的入学阶段和条件。</span></li><li><strong>办理要求</strong><span>时间、材料、渠道与变更说明是否完整。</span></li></ol><p class="source-note">以上为信息阅读提示，不是学校招生政策。</p></section>
+    <section class="reading-section" id="dates"><span class="section-number">重要时间</span><h2>以正式时间表为准。</h2><div class="quiet-notice"><h3>2026年度招生时间节点暂未收录</h3><p>报名、志愿填报、录取与报到日期，待取得当年正式文件后更新。请勿依据本站推定任何截止时间。</p></div><div class="admission-process" aria-label="招生信息阅读顺序，非校方时间表"><span>查看招生公告</span><Icon name="arrow-right" /><span>核对办理要求</span><Icon name="arrow-right" /><span>按正式渠道办理</span></div></section>
+    <section class="reading-section faq-section" id="faq"><span class="section-number">常见问题</span><h2>你关心的，逐一说明。</h2>{questions.map(([q,a]) => <details><summary>{q}<Icon name="caret-down" /></summary><div><p>{a}</p></div></details>)}</section>
+    <section class="reading-section" id="documents"><span class="section-number">相关文件</span><h2>文件与历史参考</h2><div class="document-empty"><Icon name="book-open" size={28} /><div><h3>2026年度正式招生文件</h3><p>本站尚无经过核实、可供下载的文件。请通过下方信息渠道查阅。</p></div></div><article class="historical-reference"><span>2025年 · 历史参考</span><h3>长沙晚报公开学校介绍</h3><p>原文包含2025年度相关信息，仅供认识学校和历史查阅，不代表2026年招生政策。</p><time datetime="2025-06-17">原文发布日期：2025年6月17日</time><Link href={school.source}>查看2025年原文</Link></article></section>
+    <section class="reading-section" id="channels"><span class="section-number">信息渠道</span><h2>重要的决定，<br />回到正式信息。</h2><div class="official-channels"><article><h3>学校信息平台</h3><p>长沙晚报2025年学校介绍列示的平台地址。若暂时无法打开，可通过教育主管部门核对最新入口。</p><Link href={school.official}>访问学校信息平台</Link></article><article><h3>长沙市教育局</h3><p>查询当年入学、中招政策与教育主管部门发布的正式信息。</p><Link href={school.authority}>访问教育主管部门</Link></article></div><p class="source-note">学校咨询电话尚未完成当前核实，本站不展示未经确认的号码。<a href={href('contact.html')}>查看到校与联系说明</a>。</p></section>
+  </div></div>
+</BaseLayout>

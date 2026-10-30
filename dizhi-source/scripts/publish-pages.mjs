@@ -1,13 +1,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import {spawnSync} from 'node:child_process';
 const root=path.resolve(import.meta.dirname,'..');
-if(!fs.existsSync(path.join(root,'../.git'))){
- console.error('Run this command from dizhi-source/ inside the ff repository.');
- process.exit(1);
-}
-for(const script of ['build.mjs','check.mjs']){
- const result=spawnSync(process.execPath,[path.join(root,'scripts',script)],{cwd:root,env:{...process.env,DIZHI_OUTPUT_DIR:'../dizhi'},stdio:'inherit'});
- if(result.status!==0)process.exit(result.status||1);
-}
-console.log('The dizhi/ site is ready. Commit and push the repository to update GitHub Pages.');
+const dist=path.join(root,'dist');
+const target=path.resolve(root,'../dizhi');
+const next=path.resolve(root,'../.dizhi-next');
+if(path.basename(target)!=='dizhi'||!fs.existsSync(path.join(dist,'pagefind/pagefind.js'))) throw new Error('Verified build required.');
+fs.rmSync(next,{recursive:true,force:true});
+fs.mkdirSync(next,{recursive:true});
+fs.cpSync(dist,next,{recursive:true});
+// Only replace the generated school subtree, after the build and link checks succeed.
+fs.rmSync(target,{recursive:true,force:true});
+fs.renameSync(next,target);
+console.log('Generated dizhi/ updated. No remote push or live deployment has been performed.');

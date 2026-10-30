@@ -1,0 +1,7 @@
+---
+interface Props { items: [string, string][]; }
+const { items } = Astro.props;
+---
+<aside class="section-index" data-pagefind-ignore>
+  <p>本页内容</p><nav aria-label="本页目录">{items.map(([id, title]) => <a href={`#${id}`}>{title}</a>)}</nav>
+</aside>

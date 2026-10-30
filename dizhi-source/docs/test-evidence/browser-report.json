@@ -1,0 +1,359 @@
+{
+  "browser": "154.0.8037.57",
+  "base": "http://localhost:4321/ff/dizhi/",
+  "responsive": [
+    {
+      "page": "index.html",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 360,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 430,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "index.html",
+      "width": 1920,
+      "overflow": false
+    },
+    {
+      "page": "about.html",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "admissions.html",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "campus.html",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "news.html",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "education.html",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "contact.html",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "disclosure.html",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "news/science-education.html",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "search.html",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "sources.html",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "page": "about.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "admissions.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "campus.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "news.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "education.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "contact.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "disclosure.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "news/science-education.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "search.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "sources.html",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "page": "about.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "admissions.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "campus.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "news.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "education.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "contact.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "disclosure.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "news/science-education.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "search.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "sources.html",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "page": "about.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "admissions.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "campus.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "news.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "education.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "contact.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "disclosure.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "news/science-education.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "search.html",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "page": "sources.html",
+      "width": 1440,
+      "overflow": false
+    }
+  ],
+  "checks": [
+    {
+      "name": "Homepage at 8 widths; all images decoded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "10 representative pages at 320 / 390 / 768 / 1440; no horizontal overflow",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "25 built HTML routes return expected HTTP status",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Mobile menu: expand, internal scroll, background lock, Escape, focus and scroll restoration",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Mobile same-page navigation closes menu and restores document scrolling",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Desktop submenu opens by keyboard and closes with Escape",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Chinese full-text search: title, body-only term, empty results and browser Back",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Real static news categories, empty state and old article redirect",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Native FAQ expands and collapses",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "PhotoSwipe: open, keyboard next, caption and Escape close",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Address copied to browser clipboard",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "axe-core checks completed",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "JavaScript disabled: homepage, news category and article remain available",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Reduced motion: no running animation, native instant scrolling",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Search load failure gives a real retry which recovers",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Image load failure shows contextual alternative text",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Emulated touch: gallery swipe, two-finger pinch and close",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "errors": [],
+  "axe": [
+    {
+      "route": "index.html",
+      "violations": []
+    },
+    {
+      "route": "admissions.html",
+      "violations": []
+    },
+    {
+      "route": "campus.html",
+      "violations": []
+    },
+    {
+      "route": "news/science-education.html",
+      "violations": []
+    },
+    {
+      "route": "search.html",
+      "violations": []
+    }
+  ],
+  "runtime_errors": [],
+  "resumed_after_validated_checks": false,
+  "passed": true
+}

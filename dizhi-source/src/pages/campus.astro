@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import PhotoGallery from '../components/PhotoGallery.astro';
+import Link from '../components/Link.astro';
+import { href, articleUrl } from '../lib/site';
+---
+<BaseLayout title="校园生活" description="浏览湖南省地质中学真实校园影像，阅读体育活动与文化实践报道。摄影支持触屏缩放、切换与键盘浏览。" active="campus" section="校园生活">
+  <PageHeading title="校园生活" english="THE PLACES WE GROW" intro="树影、步道、熟悉的校门。在平常的风景里，看见成长的场所。" />
+  <nav class="container campus-nav" aria-label="校园生活栏目"><a href="#gallery">校园影像</a><a href="#sports">体育活动</a><a href="#arts">艺术与社团</a><a href="#practice">学生实践</a><a href={href('contact.html#visit')}>到校指引</a></nav>
+  <section class="container campus-photography" id="gallery"><div class="gallery-intro"><h2>关于校园的<br />一组真实切片。</h2><p>摄于2024年7月23日<br />摄影 / Huangdan2060<br />点击影像，展开浏览</p></div><PhotoGallery /></section>
+  <section class="container campus-sports reading-section" id="sports"><span class="section-number">体育活动</span><h2>每一次全力以赴，<br />都在塑造自己。</h2><div class="campus-story-pair"><article><span class="large-editorial-year">2024</span><h3>地中男篮，走向全国赛场</h3><p>用一段有据可查的比赛经历，认识学校的篮球传统。</p><Link href={articleUrl('basketball-champions')}>阅读篮球报道</Link></article><article><span class="large-editorial-year">2025</span><h3>运动场上的校史课堂</h3><p>情景表演与运动会相遇，七十年办学历程成为青春表达的内容。</p><Link href={articleUrl('sports-day')}>阅读运动会报道</Link></article></div></section>
+  <section class="container campus-arts reading-section" id="arts"><span class="section-number">艺术文化与社团</span><h2>让表达，有自己的模样。</h2><p class="reading-lead">艺术与校园文化是公开学校介绍中记载的育人内容。真实的作品、排练、演出与社团生活，需要真实的校方记录。</p><div class="quiet-notice"><h3>等待真实故事进入这里</h3><p>当前尚未取得社团名录、艺术作品与学生活动摄影的发布授权。活动名称、招新时间与学生作品将在核实及授权后收录。</p><Link href={href('news/category/campus.html')}>查看已核实校园报道</Link></div></section>
+  <section class="container reading-section campus-practice" id="practice"><span class="section-number">学生实践</span><h2>把课本翻向世界。</h2><p>科学实验室里的观察，是课堂之外的一次延伸。2024年夏令营走进地质实验测试中心，让同学接触真实研究中的样品与方法。</p><Link href={articleUrl('science-education')}>认识这次科学实践</Link><span id="visit"></span><p class="source-note">计划来访？请先阅读<a href={href('contact.html#visit')}>到校指引</a>，并通过校方渠道确认入校安排。</p></section>
+</BaseLayout>
