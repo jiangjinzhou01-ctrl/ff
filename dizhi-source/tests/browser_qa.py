@@ -84,7 +84,7 @@ with sync_playwright() as p:
         page.locator('#mobile-menu summary').filter(has_text='招生信息').click()
         page.locator('.mobile-menu-scroll').evaluate('(e)=>e.scrollTop=e.scrollHeight')
         assert page.locator('.mobile-menu-scroll').evaluate('(e)=>e.scrollTop>0')
-        page.keyboard.press('Escape');page.wait_for_timeout(250)
+        page.keyboard.press('Escape');page.locator('#mobile-menu').wait_for(state='hidden')
         assert not page.locator('#mobile-menu').evaluate('(d)=>d.open')
         assert abs(page.evaluate('window.scrollY')-previous)<3
         assert page.locator('#menu-open').evaluate('(e)=>e===document.activeElement')
@@ -132,17 +132,18 @@ with sync_playwright() as p:
         load(page,'admissions.html')
         faq=page.locator('#faq details').first
         faq.locator('summary').click();assert faq.get_attribute('open') is not None
-        faq.locator('summary').click();assert faq.get_attribute('open') is None
+        faq.locator('summary').click();page.wait_for_function("!document.querySelector('#faq details').open")
+        assert faq.get_attribute('open') is None
         record('Native FAQ expands and collapses')
 
         load(page,'campus.html',lazy=True)
         page.locator('#campus-gallery figure>a').first.click()
-        page.wait_for_selector('.pswp--open');page.wait_for_timeout(350)
+        page.wait_for_selector('.pswp--open');page.wait_for_function("[...document.querySelectorAll('.pswp__item')].every(e=>e.style.display!=='none')")
         assert '1 / 5' in page.locator('.pswp__counter').inner_text()
         page.keyboard.press('ArrowRight');page.wait_for_timeout(500)
         assert '2 / 5' in page.locator('.pswp__counter').inner_text()
         assert 'Huangdan2060' in page.locator('.pswp__caption').inner_text()
-        page.keyboard.press('Escape');page.wait_for_timeout(250)
+        page.keyboard.press('Escape');page.locator('.pswp--open').wait_for(state='detached')
         assert page.locator('.pswp--open').count()==0
         record('PhotoSwipe: open, keyboard next, caption and Escape close')
 
@@ -191,7 +192,7 @@ with sync_playwright() as p:
 
     touch=browser.new_context(viewport={'width':390,'height':844},is_mobile=True,has_touch=True,device_scale_factor=1)
     tp=touch.new_page();load(tp,'campus.html',lazy=True)
-    tp.locator('#campus-gallery figure>a').first.tap();tp.wait_for_selector('.pswp--open');tp.wait_for_timeout(400)
+    tp.locator('#campus-gallery figure>a').first.tap();tp.wait_for_selector('.pswp--open');tp.wait_for_function("[...document.querySelectorAll('.pswp__item')].every(e=>e.style.display!=='none')")
     cdp=touch.new_cdp_session(tp)
     cdp.send('Input.dispatchTouchEvent',{'type':'touchStart','touchPoints':[{'x':320,'y':400}]})
     for x in [280,230,180,130,80]: cdp.send('Input.dispatchTouchEvent',{'type':'touchMove','touchPoints':[{'x':x,'y':400}]})

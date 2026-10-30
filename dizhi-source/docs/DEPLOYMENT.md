@@ -18,11 +18,11 @@ Astro：`site=https://jiangjinzhou01-ctrl.github.io`、`base=/ff/dizhi`、`build
 ## 只使用 GitHub 网页操作
 
 1. 将交付包中 `ff/` 的更新内容提交到现有 `jiangjinzhou01-ctrl/ff` 仓库 `main` 分支，包括源码、锁文件、`dizhi/` 和工作流。不要创建额外的 `ff/ff/` 目录。
-2. 首次使用新工作流时，在仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。这是现有“分支发布”切换到自动源码构建所需的一次设置。
+2. 工作流使用已声明的 Pages 写权限优先将发布源设为 GitHub Actions，避免旧 Jekyll 同时解析 Astro 源码。若仓库策略拒绝该设置，可在 **Settings → Pages → Build and deployment → Source** 手动选择 **GitHub Actions**；工作流仍会继续执行实际 artifact 部署。
 3. 进入 **Actions → Build and deploy GitHub Pages**，查看构建与部署结果；也可选择 **Run workflow**。后续在 GitHub 修改 Markdown、组件或样式并提交，会自动构建和发布。
 4. 成功后访问 `https://jiangjinzhou01-ctrl.github.io/ff/dizhi/`。旧 `index.html` 与 `admissions.html` 地址不变。
 
-重构版本通过独立分支 `codex/dizhi-rebuild-20261030` 提交审查，未修改 main 分支或替换线上主站。工作流与本地 artifact 已实际验证；真实 Actions 部署仍需在合并与正确设置 Pages 后确认，不能以本地结果代替。
+重构基线已通过 PR #1 合并到 main，并由 Actions run 41024643279 于 2026-10-30 实际部署。交互更新沿用先检查独立分支、再合并发布的流程；线上展示站不代表已获学校官方运营授权。
 
 ## 工作流执行顺序
 

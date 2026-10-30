@@ -26,7 +26,7 @@ const { active = '', home = false } = Astro.props;
   </div>
 </header>
 <dialog id="mobile-menu" class="mobile-menu" aria-labelledby="menu-title" data-pagefind-ignore>
-  <div class="menu-top"><span id="menu-title">从这里，认识地中</span><button class="icon-button" data-menu-close aria-label="关闭网站菜单"><Icon name="x" size={25} /></button></div>
+  <div class="menu-top" data-menu-drag><span class="menu-grabber" aria-hidden="true"></span><span id="menu-title">从这里，认识地中</span><button class="icon-button" data-menu-close aria-label="关闭网站菜单"><Icon name="x" size={25} /></button></div>
   <div class="mobile-menu-scroll">
     <a class="menu-home" href={href('index.html')}>首页<Icon name="arrow-right" /></a>
     <nav aria-label="移动端主导航">

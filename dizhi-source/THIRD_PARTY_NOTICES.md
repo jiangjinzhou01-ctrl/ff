@@ -7,6 +7,7 @@
 | Astro | 7.4.4 | MIT | 构建期静态站点与Content Collections |
 | @astrojs/sitemap | 3.7.4 | MIT | 构建期Sitemap |
 | Pagefind | 1.5.2 | MIT | 构建期索引、浏览器本地全文检索 |
+| Motion | 14.8.0 | MIT | mini 原生 WAAPI 动画与 spring 生成器，按需打包，不引入 React 运行时 |
 | PhotoSwipe | 5.4.4 | MIT | 校园图库，按页面加载 |
 | Phosphor Icons | 沿用仓库SVG | MIT | 构建期内嵌图标 |
 | Noto Sans CJK / Noto Serif CJK | 系统上游字体的重命名子集 | SIL OFL 1.1 | 自托管Dizhi Sans / Dizhi Song |
@@ -49,4 +50,4 @@ SOFTWARE.
 
 ## 已评估但未引入
 
-Motion（MIT）、Lucide（ISC，部分图标MIT）、Lenis（MIT）。本次使用原生CSS、Web Animations API与IntersectionObserver，不分发旧版GSAP或CustomEase，不接管原生滚动。
+Lucide（ISC，部分图标MIT）、Lenis（MIT）。本次使用 Motion mini、原生CSS、Web Animations API与IntersectionObserver，不分发旧版GSAP或CustomEase，不接管原生滚动。

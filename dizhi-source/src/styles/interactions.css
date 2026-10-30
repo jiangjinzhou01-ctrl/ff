@@ -1,0 +1,72 @@
+/* Interaction tokens preserve the school's editorial identity. */
+:root {
+  --feedback-ease: cubic-bezier(.2, .8, .25, 1);
+  --feedback-fast: 160ms;
+}
+.action { transition: color var(--feedback-fast), background var(--feedback-fast), border-color var(--feedback-fast); }
+.has-press-feedback { transform-origin: center; }
+.has-press-feedback:active { transform: none; }
+[data-pressed=true] { filter: brightness(.96); }
+.icon-button { transition: background var(--feedback-fast), color var(--feedback-fast); }
+.icon-button:hover { background: #a9a59e18; }
+.submenu { transform-origin: 50% 0; }
+.submenu-toggle svg { transition: transform 280ms var(--feedback-ease); }
+.submenu a { transition: color var(--feedback-fast); }
+.over-hero.is-solid { box-shadow: 0 2px 18px #172a3007; }
+.quick-access .icon, .beyond-links .icon, .journey-links .icon,
+.gallery-zoom { transition: transform 320ms var(--feedback-ease), color var(--feedback-fast); }
+@media (hover: hover) and (pointer: fine) {
+  .beyond-links>a:hover>.icon, .journey-links>a:hover>.icon { transform: translateX(4px); }
+  .gallery-figure>a:hover .gallery-zoom { transform: translate(-3px, -3px); }
+}
+.mobile-menu { border-radius: 0; }
+.menu-top {
+  position: relative;
+  height: calc(85px + env(safe-area-inset-top));
+  padding-top: env(safe-area-inset-top);
+  touch-action: none;
+}
+.menu-grabber {
+  position: absolute; top: max(8px, env(safe-area-inset-top)); left: 50%;
+  width: 30px; height: 3px; margin-left: -15px;
+  background: var(--stone); border-radius: 2px;
+}
+.mobile-menu-scroll {
+  height: calc(100% - 85px - env(safe-area-inset-top));
+  -webkit-overflow-scrolling: touch;
+}
+.mobile-nav-group summary, .faq-section summary { -webkit-user-select: none; user-select: none; }
+.mobile-nav-group[data-expanded=false] summary>.icon,
+.faq-section details[data-expanded=false] summary>.icon { transform: rotate(0); }
+.mobile-nav-group[data-expanded=true] summary>.icon,
+.faq-section details[data-expanded=true] summary>.icon { transform: rotate(180deg); }
+.mobile-nav-group summary>.icon, .faq-section summary>.icon { transition: transform 320ms var(--feedback-ease); }
+.pswp__top-bar { padding-top: env(safe-area-inset-top); height: calc(60px + env(safe-area-inset-top)); }
+.pswp__caption { bottom: max(18px, env(safe-area-inset-bottom)); }
+[data-copy-state=success] { color: var(--accent); }
+.search-input-wrap { position: relative; flex: 1; min-width: 0; }
+.search-input-wrap input { padding-right: 44px; }
+.search-input-wrap input::-webkit-search-cancel-button { -webkit-appearance: none; }
+.search-clear { position: absolute; right: 0; top: 50%; margin-top: -22px; }
+.search-suggestions a { position: relative; }
+.search-suggestions a::after { content: ''; position: absolute; left: 0; bottom: 4px; width: 100%; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 220ms var(--feedback-ease); }
+.search-suggestions a[aria-current]::after, .search-suggestions a:hover::after { transform: scaleX(1); }
+#search-results { transition: opacity var(--feedback-fast); }
+#search-results[aria-busy=true] { opacity: .45; pointer-events: none; }
+#search-status { display: flex; align-items: center; gap: 10px; min-height: 32px; }
+#search-status.is-loading::before { content: ''; flex: 0 0 13px; width: 13px; height: 13px; border: 1.5px solid var(--line); border-top-color: var(--accent); border-radius: 50%; animation: search-turn 700ms linear infinite; }
+@keyframes search-turn { to { transform: rotate(360deg); } }
+::view-transition-old(root) { animation: page-exit 130ms ease-out both; }
+::view-transition-new(root) { animation: page-enter 280ms var(--feedback-ease) both; }
+@keyframes page-exit { to { opacity: 0; } }
+@keyframes page-enter { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 767px) {
+  .menu-top { height: calc(75px + env(safe-area-inset-top)); }
+  .mobile-menu-scroll { height: calc(100% - 75px - env(safe-area-inset-top)); }
+  .search-input-wrap input::placeholder { font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-pressed=true] { filter: none; background-color: #a9a59e18; }
+  #search-status.is-loading::before { animation: none; }
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}

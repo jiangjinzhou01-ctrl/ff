@@ -33,7 +33,7 @@
 | Astro | 7.4.4 / MIT | 使用。静态路由与内容集合直接满足维护需求；运行环境 Node 24.19.0 符合 `>=22.23.4` 要求 |
 | Pagefind | 1.5.2 / MIT | 使用。构建后本地索引，实际测试中文正文查询与子目录结果 URL |
 | PhotoSwipe | 5.4.4 / MIT | 使用。原生模块、键盘、触屏切换与缩放，不需要 React |
-| Motion | 14.7.1 / MIT | 已评估，不安装。少量进入及菜单反馈由 WAAPI、CSS 和 IntersectionObserver 完成 |
+| Motion | 14.8.0 / MIT | 交互更新引入 mini 与 spring 生成器。原生 WAAPI 执行弹簧曲线，不引入 React 运行时；IO 仍用于少量进入效果 |
 | Lucide | 1.64.0 / ISC（部分上游图标 MIT） | 已评估，不新增。沿用已有 MIT Phosphor SVG，避免混用图标风格 |
 | Lenis | 1.3.27 / MIT | 不安装。保持浏览器原生滚动与返回行为 |
 | @astrojs/sitemap | 3.7.4 / MIT | 使用，并显式将文件型页面写为 `.html` URL |

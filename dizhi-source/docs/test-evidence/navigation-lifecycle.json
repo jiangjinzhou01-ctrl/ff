@@ -1,5 +1,11 @@
 {
   "passed": true,
-  "name": "Cross-page Back and persisted page lifecycle preserve gallery and header observers",
-  "runtime_errors": []
+  "actual_back_cache_used": false,
+  "checks": [
+    "Gallery after cross-page Back",
+    "Gallery after synthetic persisted lifecycle",
+    "Open menu is closed and unlocked across navigation and Back",
+    "Header observer survives persisted lifecycle"
+  ],
+  "errors": []
 }
