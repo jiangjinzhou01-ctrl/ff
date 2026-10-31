@@ -65,3 +65,68 @@
   [data-pressed=true] { filter: none; background-color: #a9a59e18; }
   #search-status.is-loading::before { animation: none; }
 }
+
+/* Shared narrative system: every control is available to touch, pointer and keyboard. */
+.reading-progress{position:absolute;bottom:-1px;left:0;width:100%;height:3px;overflow:hidden;pointer-events:none;background:transparent}
+.reading-progress>span{display:block;width:100%;height:100%;background:var(--accent);transform:scaleX(0);transform-origin:left}
+.over-hero:not(.is-solid) .reading-progress>span{background:#f6f4ef}
+.hero-line{display:block;overflow:clip}
+.hero-line>span{display:block}
+.chapter-guide{position:sticky;top:var(--header-height);z-index:35;background:var(--paper);border-block:1px solid var(--line)}
+.chapter-guide-inner{display:flex;gap:28px;align-items:center;min-height:66px}
+.chapter-guide-status{display:flex;flex-direction:column;flex-shrink:0;font-size:10px;line-height:1.7;color:var(--muted)}
+.chapter-guide-status b{font:11px/1.7 Arial,sans-serif;color:var(--accent);letter-spacing:.1em}
+.chapter-guide nav{position:relative;display:flex;gap:16px;flex:1;overflow:auto;overscroll-behavior-inline:contain;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.chapter-guide nav>a{position:relative;display:flex;align-items:center;justify-content:center;gap:8px;flex-shrink:0;min-height:64px;padding:0 14px;font-size:12px;border-bottom:2px solid transparent;transition:border-color 250ms,color 250ms,background 250ms}
+.chapter-guide nav>a small{font:9px Arial,sans-serif;color:var(--muted)}
+.chapter-guide nav>a[aria-current]{border-bottom-color:var(--accent);color:var(--accent);background:#235b5509}
+.chapter-guide nav>a[aria-current] small{color:var(--accent)}
+.chapter-top{display:grid;place-items:center;min-width:44px;height:44px;border-left:1px solid var(--line)}
+.home-page section[id]{scroll-margin-top:70px}
+.legacy-visual{top:calc(var(--header-height) + 86px)}
+.era-tabs{display:flex;gap:8px;border-bottom:1px solid var(--line)}
+.era-tabs button{flex:1;padding:13px 8px;font:19px/1.5 Arial,sans-serif;min-height:52px;color:var(--muted);background:none;position:relative;border-bottom:2px solid transparent;transition:color 200ms,border-color 200ms,background 200ms}
+.era-tabs button[aria-selected=true]{color:var(--accent);border-bottom-color:var(--accent);background:#235b5509}
+.era-instruction{display:block;margin-top:14px;font-size:11px;color:var(--muted)}
+.is-interactive .legacy-stories{padding-top:60px}
+.is-interactive .era-viewport{overflow:clip;min-height:275px;touch-action:pan-y pinch-zoom}
+.is-interactive .era-viewport article{border:0;padding:30px 4px 24px;min-height:270px}
+.era-pagination{display:flex;align-items:center;justify-content:space-between;border-block:1px solid var(--line);padding:7px 0;margin:8px 0 22px}
+.era-pagination>span{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.era-pagination>div{display:flex;gap:8px}.era-pagination button{border:1px solid var(--line);border-radius:50%}
+.legacy-years>span{transition:opacity 320ms}
+.life figure>a{position:relative;display:block;overflow:hidden}
+.photo-explore{position:absolute;right:16px;bottom:16px;display:flex;align-items:center;gap:9px;font-size:11px;color:var(--paper);padding:10px 14px;background:var(--mineral);border:1px solid #ffffff55;min-height:44px;transition:background 200ms}
+.life figure>a:focus-visible .photo-explore{background:var(--accent)}
+.article-tools{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin-top:22px;padding:12px 0;border-block:1px solid var(--line);font-size:12px;color:var(--muted)}
+.article-tools>.action{font-size:12px;margin-left:auto}.link-copy-status{flex-basis:100%;font-size:12px;color:var(--accent)}.link-copy-status:empty{display:none}
+@media(hover:hover) and (pointer:fine){
+ .life figure>a img,.gallery-figure>a img{transition:transform 700ms var(--feedback-ease)}
+ .life figure>a:hover img,.gallery-figure>a:hover img{transform:scale(1.035)}
+ .life figure>a:hover .photo-explore{background:var(--accent)}
+ .chapter-guide nav>a:hover{color:var(--accent);background:#235b5509}
+ .era-tabs button:hover{color:var(--accent)}
+}
+@media(max-width:1023px){
+ .section-index{position:sticky;top:var(--header-height);z-index:30;background:var(--paper);padding-top:10px;padding-bottom:3px;border-bottom:1px solid var(--line)}
+ .section-index nav{flex-wrap:nowrap;overflow:auto;overscroll-behavior-inline:contain;padding-bottom:7px;gap:18px;border:0;scrollbar-width:thin}
+ .section-index nav a{flex-shrink:0;min-height:44px}
+}
+@media(max-width:767px){
+ .chapter-guide-inner{gap:12px;min-height:60px}.chapter-guide-status{font-size:9px}.chapter-guide-status b{font-size:9px}
+ .chapter-guide nav{gap:2px}.chapter-guide nav>a{font-size:11px;padding:0 10px;min-height:58px;gap:6px}.chapter-guide nav>a small{font-size:8px}
+ .chapter-top{display:none}.legacy-visual{position:static}
+ .legacy-years>span{display:block}.legacy-years>span:not(.is-active){opacity:0}.legacy-years>span.is-active{opacity:1}
+ .is-interactive .legacy-stories{padding-top:0;margin-top:30px}.era-tabs button{font-size:21px;min-height:56px}
+ .is-interactive .era-viewport{min-height:255px}.is-interactive .era-viewport article{display:block;min-height:250px;padding:26px 2px 22px}
+ .is-interactive .era-viewport article[hidden]{display:none!important}.is-interactive .era-viewport time{font-size:12px}
+ .is-interactive .era-viewport h3{margin-top:14px;font-size:21px}.is-interactive .era-viewport p{margin-top:14px;font-size:15px;line-height:2}
+ .photo-explore{right:10px;bottom:10px;font-size:10px;padding:8px 11px}
+ .pswp--touch .pswp__button--arrow{visibility:visible}
+ .pswp__button--arrow{width:44px;height:60px}.pswp__button--arrow .pswp__icn{left:5px}.pswp__button--arrow--next .pswp__icn{right:5px;left:auto}
+ .article-tools{gap:14px;font-size:12px}.article-tools>.action{min-height:44px}
+}
+@media(prefers-reduced-motion:reduce){
+ .life figure>a img,.gallery-figure>a img{transition:none;transform:none!important}
+ .era-tabs button,.chapter-guide nav>a,.legacy-years>span{transition:none}
+}

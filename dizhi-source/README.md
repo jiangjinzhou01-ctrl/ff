@@ -1,6 +1,6 @@
 # 湖南省地质中学 · 数字校园设计展示
 
-以“时间、探索与成长”为线索的完整静态网站。已实现25个页面、中文全文搜索、可触屏缩放的实景图库、分学段招生导引、移动菜单、Markdown内容管理和GitHub Pages自动构建工作流。
+以“时间、探索与成长”为线索的完整静态网站。当前版本 2.2：PC 与移动端共用校史切换、章节导览、影像缩放和文章链接操作，首屏与章节采用有限、可中断的动画。已实现25个页面、中文全文搜索、可触屏缩放的实景图库、分学段招生导引、移动菜单、Markdown内容管理和GitHub Pages自动构建工作流。
 
 **本项目为非官方设计展示，尚未获得学校官方运营授权。** 当年招生通知、联系方式、校务文件与未取得授权的师生活动影像，保留明确资料状态，不虚构。
 
@@ -36,7 +36,7 @@ npm run preview
 - `public/media/`：明确CC BY 4.0授权的本校实景AVIF / WebP，每张4个尺寸，另有手机首屏裁切。
 - `src/assets/fonts/`：本地Noto CJK重命名子集，许可见 `docs/licenses/`。
 - `scripts/`：搜索索引、内部链接校验、静态输出同步、仓库级Pages artifact。
-- `tests/browser_qa.py`、`tests/motion_qa.py`：浏览器交互、响应式、键盘、动效中断与无障碍检查。真实执行结果见 `docs/TEST-RESULTS.md`。
+- `tests/browser_qa.py`、`tests/motion_qa.py`、`tests/parity_qa.py`：浏览器交互、响应式、键盘、动效中断与无障碍检查。真实执行结果见 `docs/TEST-RESULTS.md`。
 - 仓库根 `.github/workflows/deploy-pages.yml`：GitHub网页修改源码后自动构建部署。
 
 ## 部署

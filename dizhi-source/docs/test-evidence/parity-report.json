@@ -1,0 +1,59 @@
+{
+  "base": "http://localhost:4321/ff/hunan-dizhi-school/",
+  "widths": [
+    {
+      "width": 320,
+      "timeline": true,
+      "photo_controls": true,
+      "chapter_navigation": true,
+      "overflow": false
+    },
+    {
+      "width": 360,
+      "timeline": true,
+      "photo_controls": true,
+      "chapter_navigation": true,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "timeline": true,
+      "photo_controls": true,
+      "chapter_navigation": true,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "timeline": true,
+      "photo_controls": true,
+      "chapter_navigation": true,
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "timeline": true,
+      "photo_controls": true,
+      "chapter_navigation": true,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "timeline": true,
+      "photo_controls": true,
+      "chapter_navigation": true,
+      "overflow": false
+    }
+  ],
+  "checks": [
+    "Touch swipe changes history; same selected year and text as desktop",
+    "Timeline, direct image zoom, visible next/previous controls and chapter navigation at six widths",
+    "Article link clipboard and reading progress work on mobile",
+    "Enhanced homepage tab semantics and controls pass axe WCAG scans",
+    "Runtime reduced-motion change settles all effects and keeps controls working",
+    "Hero visibly animates on arrival and ends without an idle animation loop",
+    "No-JavaScript fallback preserves all history and original image access"
+  ],
+  "errors": [],
+  "axe": [],
+  "passed": true
+}

@@ -300,7 +300,7 @@
       "detail": null
     },
     {
-      "name": "axe-core checks completed",
+      "name": "axe-core checks completed; no violations",
       "passed": true,
       "detail": 0
     },

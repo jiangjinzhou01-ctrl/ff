@@ -18,9 +18,9 @@
   "browser": "154.0.8037.57",
   "local_rAF_sample_ms": {
     "median": 16.7,
-    "p95": 16.8,
+    "p95": 16.7,
     "max": 16.8,
-    "count": 97
+    "count": 95
   },
   "passed": true
 }

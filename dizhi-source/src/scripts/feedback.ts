@@ -1,6 +1,6 @@
 import { springTo, springs, reducedMotion, stopMotion } from './motion';
 
-const selector = '.action,.icon-button,.submenu-toggle,.submenu a,.quick-access>a,.gallery-figure>a,.news-filters>a,.search-suggestions>a,.campus-nav a,.menu-home,.mobile-nav-group summary,.faq-section summary';
+const selector = '.action,.icon-button,.submenu-toggle,.submenu a,.quick-access>a,.gallery-figure>a,.news-filters>a,.search-suggestions>a,.campus-nav a,.menu-home,.mobile-nav-group summary,.faq-section summary,.era-tabs button,.era-pagination button,.chapter-guide a,.life figure>a,[data-copy-link],.beyond-links>a,.home-news-list h3 a';
 let pressed: HTMLElement | null = null;
 let pointer: { id: number; x: number; y: number } | null = null;
 

@@ -161,7 +161,8 @@ with sync_playwright() as p:
         page.add_script_tag(content=axe_script)
         violations=page.evaluate("async()=>{const r=await axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21a','wcag21aa','wcag22aa']}});return r.violations.map(v=>({id:v.id,impact:v.impact,description:v.description,nodes:v.nodes.map(n=>n.target)}))}")
         report['axe'].append({'route':route or 'index.html','violations':violations})
-    record('axe-core checks completed',sum(len(r['violations']) for r in report['axe']))
+    assert all(not r['violations'] for r in report['axe']),report['axe']
+    record('axe-core checks completed; no violations',0)
 
     nojs=browser.new_context(java_script_enabled=False,viewport={'width':390,'height':844})
     np=nojs.new_page();load(np)

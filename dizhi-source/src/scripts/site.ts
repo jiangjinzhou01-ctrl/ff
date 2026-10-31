@@ -1,7 +1,7 @@
 import './feedback';
 import './menu';
+import './experience';
 import { springTo, springs, finishMotion } from './motion';
-const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
 const observers: IntersectionObserver[] = [];
 const header = document.querySelector<HTMLElement>('#site-header');
 const arrival = document.querySelector('#arrival');
@@ -60,24 +60,6 @@ if (indexLinks.length) {
   }, { rootMargin: '-15% 0px -55% 0px' });
   indexLinks.forEach(link => { const section = document.querySelector(link.hash); if (section) observer.observe(section); });
   observers.push(observer);
-}
-if (!reduce.matches && window.matchMedia('(min-width: 768px)').matches) {
-  const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const era = (entry.target as HTMLElement).dataset.era;
-      document.querySelectorAll<HTMLElement>('[data-era-year]').forEach(el => el.classList.toggle('is-active', el.dataset.eraYear === era));
-    }
-  }), { rootMargin: '-25% 0px -35% 0px' });
-  document.querySelectorAll('[data-era]').forEach(el => observer.observe(el)); observers.push(observer);
-}
-if (!reduce.matches) {
-  const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    if (reduce.matches) { observer.unobserve(entry.target); return; }
-    entry.target.animate([{ opacity: .45, transform: 'translateY(18px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 650, easing: 'cubic-bezier(.22,1,.36,1)' });
-    observer.unobserve(entry.target);
-  }), { threshold: .12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el)); observers.push(observer);
 }
 function imageError(img: HTMLImageElement) {
   const wrapper = img.closest<HTMLElement>('.school-image');
