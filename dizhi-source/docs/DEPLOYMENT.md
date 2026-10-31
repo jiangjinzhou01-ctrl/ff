@@ -6,23 +6,24 @@
 ff/
   index.html ...          原仓库其他站点，保留
   404.html                仓库级未知路径入口
-  dizhi/                  可直接发布的学校静态输出
+  hunan-dizhi-school/     V2生成的静态输出
+  dizhi/                  现有站点目录
   dizhi-source/           Astro 源码
   .github/workflows/deploy-pages.yml
 ```
 
-Astro：`site=https://jiangjinzhou01-ctrl.github.io`、`base=/ff/dizhi`、`build.format=file`、`trailingSlash=never`。这会生成 `dist/index.html`、`dist/admissions.html` 和 `dist/news/*.html`，不是只设置 base 而忽略公开目录。
+Astro：`site=https://jiangjinzhou01-ctrl.github.io`、`base=/ff/hunan-dizhi-school`、`build.format=file`、`trailingSlash=never`。这会生成 `dist/index.html`、`dist/admissions.html` 和 `dist/news/*.html`，不是只设置 base 而忽略公开目录。
 
-`stage:pages` 在仓库 `_site/` 中保留根站点文件，再把本次 `dist/` 放入 `_site/dizhi/`。GitHub Pages 的仓库路径 `/ff/` 由托管平台提供，因此 artifact 中不再嵌套 `ff/`。最终路径是 `/ff/dizhi/`。
+`stage:pages` 在仓库 `_site/` 中保留根站点文件，再把本次 `dist/` 放入 `_site/hunan-dizhi-school/`。GitHub Pages 的仓库路径 `/ff/` 由托管平台提供，因此 artifact 中不再嵌套 `ff/`。最终路径是 `/ff/hunan-dizhi-school/`。
 
 ## 只使用 GitHub 网页操作
 
 1. 将交付包中 `ff/` 的更新内容提交到现有 `jiangjinzhou01-ctrl/ff` 仓库 `main` 分支，包括源码、锁文件、`dizhi/` 和工作流。不要创建额外的 `ff/ff/` 目录。
 2. 工作流使用已声明的 Pages 写权限优先将发布源设为 GitHub Actions，避免旧 Jekyll 同时解析 Astro 源码。若仓库策略拒绝该设置，可在 **Settings → Pages → Build and deployment → Source** 手动选择 **GitHub Actions**；工作流仍会继续执行实际 artifact 部署。
 3. 进入 **Actions → Build and deploy GitHub Pages**，查看构建与部署结果；也可选择 **Run workflow**。后续在 GitHub 修改 Markdown、组件或样式并提交，会自动构建和发布。
-4. 成功后访问 `https://jiangjinzhou01-ctrl.github.io/ff/dizhi/`。旧 `index.html` 与 `admissions.html` 地址不变。
+4. 成功后访问 `https://jiangjinzhou01-ctrl.github.io/ff/hunan-dizhi-school/`。旧 `index.html` 与 `admissions.html` 地址不变。
 
-重构基线已通过 PR #1 合并到 main，并由 Actions run 41024643279 于 2026-10-30 实际部署。交互更新沿用先检查独立分支、再合并发布的流程；线上展示站不代表已获学校官方运营授权。
+访问链接为 `https://jiangjinzhou01-ctrl.github.io/ff/hunan-dizhi-school/`。源仓库的 Pages workflow 按本次审核后的静态 artifact 发布；这只是非官方设计展示。
 
 ## 工作流执行顺序
 
@@ -38,7 +39,7 @@ npm ci
 npm run dev
 ```
 
-开发地址使用终端打印的 `/ff/dizhi/` 前缀。生产构建验证：
+开发地址使用终端打印的 `/ff/hunan-dizhi-school/` 前缀。生产构建验证：
 
 ```bash
 npm run check
@@ -47,9 +48,9 @@ npm run verify
 npm run preview
 ```
 
-生产预览：`http://localhost:4321/ff/dizhi/`。开发服务器不生成 Pagefind，因此全文搜索应在 build + preview 后验证。开发状态搜索错误会明确反馈，不伪造结果。
+生产预览：`http://localhost:4321/ff/hunan-dizhi-school/`。开发服务器不生成 Pagefind，因此全文搜索应在 build + preview 后验证。开发状态搜索错误会明确反馈，不伪造结果。
 
-继续采用旧版 main 分支静态发布时，执行 `npm run publish:pages`，该命令构建、验链并更新仓库 `dizhi/`；提交该目录即可。该替代方式仍可用，但要获得“只改 Markdown 自动更新”的体验，应采用上述 Actions。
+继续采用旧版 main 分支静态发布时，执行 `npm run publish:pages`，该命令构建、验链并更新仓库 `hunan-dizhi-school/`；提交该目录即可。该替代方式仍可用，但要获得“只改 Markdown 自动更新”的体验，应采用上述 Actions。
 
 ## 新增报道
 
@@ -72,7 +73,7 @@ draft: true
 经核实并获得发布许可的正文。
 ```
 
-分类必须为现有 schema 中的六类之一。`draft: true` 不发布；正式发布前改为 `false`。URL 自动成为 `/ff/dizhi/news/文件名.html`，无需复制 HTML。`cover` 为空完全可用；有权利明确的活动照片时再扩展图片清单与说明，不把校园资料图冒充活动现场。
+分类必须为现有 schema 中的六类之一。`draft: true` 不发布；正式发布前改为 `false`。URL 自动成为 `/ff/hunan-dizhi-school/news/文件名.html`，无需复制 HTML。`cover` 为空完全可用；有权利明确的活动照片时再扩展图片清单与说明，不把校园资料图冒充活动现场。
 
 新标题字符未包含在字体子集中时自动使用系统字体。字体子集更新是可选优化，不是内容发布前置条件。
 

@@ -8,7 +8,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--base', default='http://localhost:4321/ff/dizhi/')
+parser.add_argument('--base', default='http://localhost:4321/ff/hunan-dizhi-school/')
 parser.add_argument('--out', default='/tmp/dizhi-qa')
 parser.add_argument('--chromium', default='/usr/bin/chromium')
 parser.add_argument('--resume-clipboard',action='store_true',help='Run the remaining checks after a validated interaction pass')

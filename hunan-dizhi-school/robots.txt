@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jiangjinzhou01-ctrl.github.io/ff/hunan-dizhi-school/sitemap-index.xml

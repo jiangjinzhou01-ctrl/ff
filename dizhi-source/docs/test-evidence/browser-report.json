@@ -1,6 +1,6 @@
 {
   "browser": "154.0.8037.57",
-  "base": "http://localhost:4321/ff/dizhi/",
+  "base": "http://localhost:4321/ff/hunan-dizhi-school/",
   "responsive": [
     {
       "page": "index.html",

@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 const root = path.resolve('dist');
-const prefix = '/ff/dizhi/';
+const prefix = '/ff/hunan-dizhi-school/';
 const files = fs.readdirSync(root, { recursive: true });
 const html = files.filter(f => f.endsWith('.html'));
 const failures = [];

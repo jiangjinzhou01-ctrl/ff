@@ -1,5 +1,5 @@
 {
-  "base": "http://localhost:4321/ff/dizhi/",
+  "base": "http://localhost:4321/ff/hunan-dizhi-school/",
   "checks": [
     "Pointer compression and scroll-cancel spring settle back to rest",
     "Menu spring close restores page scroll and keyboard focus",
@@ -18,9 +18,9 @@
   "browser": "154.0.8037.57",
   "local_rAF_sample_ms": {
     "median": 16.7,
-    "p95": 16.7,
+    "p95": 16.8,
     "max": 16.8,
-    "count": 98
+    "count": 97
   },
   "passed": true
 }

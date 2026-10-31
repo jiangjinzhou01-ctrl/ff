@@ -16,7 +16,7 @@ const structuredData = schema || { '@context': 'https://schema.org', '@type': 'W
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#F6F3ED" /><meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#F6F4EF" /><meta name="color-scheme" content="light" />
     <title>{fullTitle}</title><meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex, follow" />}
@@ -27,7 +27,6 @@ const structuredData = schema || { '@context': 'https://schema.org', '@type': 'W
     <link rel="sitemap" href={href('sitemap-index.xml')} />
     {home && <><link rel="preload" as="image" type="image/avif" media="(min-width: 768px)" imagesrcset={[480,800,1280,1920].map(w => `${href(`media/campus-e-${w}.avif`)} ${w}w`).join(', ')} imagesizes="100vw" fetchpriority="high" /><link rel="preload" as="image" type="image/avif" media="(max-width: 767px)" imagesrcset={[480,800,1280].map(w => `${href(`media/campus-e-portrait-${w}.avif`)} ${w}w`).join(', ')} imagesizes="100vw" fetchpriority="high" /></>}
     <script type="application/ld+json" set:html={JSON.stringify(structuredData).replaceAll('<', '\u003c')} />
-    <style>@view-transition{navigation:auto}</style>
   </head>
   <body id="top" class:list={[{ 'home-page': home }]} data-base={href('')}>
     <a class="skip-link" href="#main">跳至正文</a>

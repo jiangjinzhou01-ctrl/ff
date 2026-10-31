@@ -22,7 +22,7 @@ npm run verify
 npm run preview
 ```
 
-访问 `http://localhost:4321/ff/dizhi/`。Pagefind在生产构建后生成，开发服务器中的搜索会提示加载状态，不能替代生产搜索验收。
+访问 `http://localhost:4321/ff/hunan-dizhi-school/`。Pagefind在生产构建后生成，开发服务器中的搜索会提示加载状态，不能替代生产搜索验收。
 
 ## 交付内容
 
@@ -31,18 +31,19 @@ npm run preview
 - `src/content/news/`：5篇带原始日期和来源的独立报道摘要；新增文章无需复制HTML。
 - `src/content.config.ts`：文章字段、分类与草稿状态校验。
 - `src/styles/global.css`：统一色彩、排版、响应式与减少动态效果设置。
+- 首页首屏以本校高清建筑实景建立学校身份；篮球、科学教育作为各自章节呈现，避免单一项目代表学校整体。
 - `src/scripts/`：Motion mini 弹簧反馈、可拖动菜单、折叠栏、真实搜索、地址复制、影像错误与局部进入效果。
 - `public/media/`：明确CC BY 4.0授权的本校实景AVIF / WebP，每张4个尺寸，另有手机首屏裁切。
 - `src/assets/fonts/`：本地Noto CJK重命名子集，许可见 `docs/licenses/`。
 - `scripts/`：搜索索引、内部链接校验、静态输出同步、仓库级Pages artifact。
-- `tests/browser_qa.py`：浏览器交互与响应式检查脚本，测试结果见 `docs/TEST-RESULTS.md`。
+- `tests/browser_qa.py`、`tests/motion_qa.py`：浏览器交互、响应式、键盘、动效中断与无障碍检查。真实执行结果见 `docs/TEST-RESULTS.md`。
 - 仓库根 `.github/workflows/deploy-pages.yml`：GitHub网页修改源码后自动构建部署。
 
 ## 部署
 
-保留原有 `/ff/dizhi/index.html`、`admissions.html` 和主要 `.html` 入口；3条旧文章地址静态跳转到新详情页。`dist/` 构建结果在 artifact 中实际放入 `dizhi/`，同时保留仓库其他页面。
+保留原有 `/ff/hunan-dizhi-school/index.html`、`admissions.html` 和主要 `.html` 入口；3条旧文章地址静态跳转到新详情页。`dist/` 构建结果在 artifact 中实际放入 `hunan-dizhi-school/`，同时保留仓库其他页面。
 
-只使用GitHub网页部署和维护的完整操作见 [部署说明](docs/DEPLOYMENT.md)。重构使用独立分支 `codex/dizhi-rebuild-20261030` 交付审查，当前线上主站未替换。实际远程提交与PR状态以交付链接为准。
+只使用GitHub网页部署和维护的完整操作见 [部署说明](docs/DEPLOYMENT.md)。仓库根目录的 `.github/workflows/deploy-pages.yml` 会在 `main` 分支更新时构建、验链并发布 V2 子站。当前设计展示仍未获学校官方运营授权。
 
 ## 研究、内容与许可
 

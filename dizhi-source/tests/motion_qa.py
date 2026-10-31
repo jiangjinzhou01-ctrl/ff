@@ -7,7 +7,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--base', default='http://localhost:4321/ff/dizhi/')
+parser.add_argument('--base', default='http://localhost:4321/ff/hunan-dizhi-school/')
 parser.add_argument('--out', default='/tmp/dizhi-motion-qa')
 args = parser.parse_args()
 out = Path(args.out); out.mkdir(parents=True, exist_ok=True)

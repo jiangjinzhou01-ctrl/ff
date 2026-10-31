@@ -1,3 +1,19 @@
+# V2 重新构建与验收 · 2026-10-31
+
+当前部署目标：`/ff/hunan-dizhi-school/`；旧仓库页面及 `/ff/dizhi/` 在 artifact 中保留。首页身份图像为经许可的 1920px 本校建筑实景，篮球仅进入独立体育特色章节。暖白、深松绿与矿物青已应用到全站 token；取消了浏览器报出的无效视图转场状态，保持原生页面导航。
+
+- `npm ci`、`npm run check`：Node 24.19，38 个 Astro 文件，0 errors / warnings / hints。
+- `npm run build`：25 个静态 HTML 页面、13 个中文 Pagefind 搜索页。
+- `npm run verify`：全部 25 个路由、2040 条内部链接/锚点/静态资源，在新子目录下有效。
+- `tests/browser_qa.py`：实际执行成功；首页及 10 类内页合计 48 个屏幕尺寸检查，17 项交互检查，运行时错误 0。
+- axe-core：5 个 390px 页面，WCAG 2A / 2AA / 2.1A / 2.1AA / 2.2AA，违规 0。
+- `tests/motion_qa.py`：12 项键盘、触摸、打断、减少动态与动画结束状态检查全部通过。
+- 图片解码、站内搜索、Back / Forward、菜单焦点与滚动恢复、无 JavaScript 阅读、图片与搜索失败恢复均已实际检查。
+
+此次没有重新测 Lighthouse；表中 91 / 100 / 100 / 100 是 2026-10-30 的旧基线，不作为本次构建的新成绩。
+
+---
+
 # 实际测试结果 · 交互更新 2.1
 
 日期：2026-10-30。Chromium 154.0.8037.57（Linux无头模式）、Node 24.19.0、Lighthouse 13.6.0。以下为实际命令与浏览器结果。
@@ -8,7 +24,7 @@
 - `npm run build`：25个HTML页面，13个正文页面的中文Pagefind索引。
 - `npm run verify`：25个HTML路由、2040个内部链接/锚点/资源检查通过。
 - `node scripts/publish-pages.mjs` 同步生成输出到 `dizhi/`；`npm run stage:pages` 生成 `_site/dizhi/`，保留仓库父站点。
-- 保持 `/ff/dizhi/`、`.html` 页面、Canonical、Sitemap与搜索结果地址；新增公开许可证文件，并在来源页提供实际入口。
+- 保持 `/ff/hunan-dizhi-school/`、`.html` 页面、Canonical、Sitemap与搜索结果地址；新增公开许可证文件，并在来源页提供实际入口。
 - 重构基线已由 PR #1 与 Actions run 41024643279 实际上线。此交互版本由独立分支检查后经 main 发布；部署应以对应提交的真实 Actions 结果为准。
 
 ## 全站回归
