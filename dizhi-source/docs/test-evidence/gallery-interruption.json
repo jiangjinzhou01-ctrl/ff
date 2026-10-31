@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "width": 390,
+      "close": "escape",
+      "seconds": 0.719,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "close": "button",
+      "seconds": 0.719,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "close": "escape",
+      "seconds": 0.725,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "close": "button",
+      "seconds": 0.735,
+      "passed": true
+    }
+  ]
+}

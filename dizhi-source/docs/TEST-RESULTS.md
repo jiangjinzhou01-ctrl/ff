@@ -6,6 +6,7 @@
 - `tests/motion_qa.py`：12项菜单、触控、动画中断、输入法、减少动态及动画结束状态通过。
 - `tests/parity_qa.py`：320/360/390/768/1024/1440px共用三段校史、首页图片缩放及前后控件、章节定位通过；真实触屏模拟滑动、复制文章链接、正文阅读进度、实时减少动态及无JS内容回退通过。
 - 修复测试发现的章节锚点双重预留偏移、图片可见名称/朗读名称不一致，以及正文淡入期间对比度偏低。
+- 图库展开期间立即按 Escape 或点关闭的4项回归（390/1440px）通过，记录于 `test-evidence/gallery-interruption.json`；关闭意图会在展开结束时自动执行，不再丢失。
 - 当前校史和图库的操控不依赖悬停，手机拥有同等功能；CSS根据屏幕重排。动画均有限时，不使用滚动接管或闲置循环。
 
 原始结果见 `test-evidence/browser-report.json`、`motion-report.json`、`parity-report.json`。未重新测量 Lighthouse，未进行 Android/iOS 真机测试，以下历史分数不能作为2.2的新成绩。

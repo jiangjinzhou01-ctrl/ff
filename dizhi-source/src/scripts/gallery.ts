@@ -17,7 +17,22 @@
     }
     if (reduced.matches) lightbox.pswp?.animations.stopAll();
   };
-  lightbox.on('beforeOpen', syncMotion);
+  // PhotoSwipe ignores close() while its opening transition runs. Keep an early
+  // close request and honor it as soon as opening ends, rather than losing a tap.
+  let opening = false;
+  let pendingClose = false;
+  lightbox.on('beforeOpen', () => { opening = true; pendingClose = false; syncMotion(); });
+  lightbox.on('openingAnimationEnd', () => {
+    opening = false;
+    if (pendingClose) { pendingClose = false; queueMicrotask(() => lightbox.pswp?.close()); }
+  });
+  lightbox.on('destroy', () => { opening = false; pendingClose = false; });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && opening) pendingClose = true;
+  }, true);
+  document.addEventListener('click', event => {
+    if (opening && event.target instanceof Element && event.target.closest('.pswp__button--close')) pendingClose = true;
+  }, true);
   reduced.addEventListener('change', syncMotion);
   lightbox.on('uiRegister', () => {
     lightbox.pswp?.ui?.registerElement({ name: 'caption', order: 9, isButton: false, appendTo: 'root', onInit: (el, pswp) => {
